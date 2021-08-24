@@ -1,1 +1,31 @@
 /* You can add global styles to this file, and also import other style files */
+
+.card {
+    box-shadow: 0px 1px 3px 0px rgb(255, 253, 253);
+    padding: 10px;
+    margin: 35px;
+    height: 100%;
+    width: 100%;
+    border: 1px;
+    /* background-color: blue; */
+    border-radius: 18px;
+}
+
+.bttn {
+    width: 100%;
+    align-items: center;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    background-color: orangered;
+    margin-bottom: 15px;
+}
+
+.iimage {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@import '~ngx-ui-switch/ui-switch.component.scss';

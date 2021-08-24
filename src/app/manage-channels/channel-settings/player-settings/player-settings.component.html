@@ -1,0 +1,124 @@
+<div class="line"></div>
+<div class=" row mb-1 ">
+    <div class="left card col-md-5">
+        <div class="icon">
+            <i class="fa fa-refresh" (click)="onRefresh()"></i>
+        </div>
+        <img src="assets/cartoon.jpg" alt="">
+        <div class="play">
+            <i class="fa fa-play-circle-o" (click)="onPlay()"></i>
+            <input type="range">
+        </div>
+        <h6 class="mt-2">Embed Code
+            <hr>
+            <p> iframe scrolling=http://insta.liveidstream.com/iframe></p>
+        </h6>
+        <div type="button" class="btn" (click)="onPreview()">Preview</div>
+        <h5 class="text">Change The Player Warning Message
+            <hr>
+            <div class="text-input">
+                <p>Message 1
+                    <br>
+                    <input type="text" placeholder="Could not Play video">
+                </p>
+                <p>Message 2
+                    <br>
+                    <input type="text" placeholder="Could not Play video">
+                </p>
+            </div>
+        </h5>
+        <button class="end" (click)="onUpdatePlayerWarningMsg()">Update</button>
+    </div>
+
+    <div class="card col-md-5">
+        
+        <div class="mb-3 ">
+            <label for="exampleFormControlInput1" class="form-label">Select Your Player</label>
+            <select class="form-select" aria-label="Default select example">
+                    <option selected>Clapper</option>
+                    <option value="1">One</option>
+                  </select>
+            <label for="exampleFormControlInput1 " class="form-label mt-2 ">Select Your Player Type</label>
+            <select class="form-select" aria-label="Default select example">
+                      <option selected>HLS</option>
+                      <option value="1">RTMP</option>
+                      <option value="1">Dash</option>
+                    </select>
+            <div class="mt-2">
+                <label for="exampleFormControlInput1" class="form-label">DASH URL</label>
+                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="http://liveidstream.com/Default.mpd">
+            </div>
+            <div class="mt-2">
+                <label for="exampleFormControlInput1" class="form-label">DASH URL</label>
+                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="http://liveidstream.com/Default.mpd">
+            </div>
+            <div class="mt-2">
+                <label for="exampleFormControlInput1" class="form-label">Height</label>
+                <input type="email" class="form-control" id="leFormControlInput1examp" placeholder="200">
+            </div>
+            <div class="mt-2">
+                <label for="exampleFormControlInput1" class="form-label">Width</label>
+                <input type="email" class="form-control" id="leFormControlInput1examp" placeholder="200">
+            </div>
+            <div class="mt-2">
+                <label for="exampleFormControlInput1" class="form-label">Poster</label>
+                <input type="email" class="form-control" id="leFormControlInput1examp" placeholder="http://liveidstream.com/Default.mpd">
+            </div>
+            <div class="form-check form-switch mt-2">
+                <label class="form-check-label" for="flexSwitchCheckDefault">Enable DVR</label>
+                <ui-switch size='small' class="cheked" [checked]="dashNested"></ui-switch>
+            </div>
+            <div class="form-check form-switch mt-2">
+                <label class="form-check-label" for="flexSwitchCheckDefault">Stretch</label>
+                <ui-switch size='small' class="cheked" [checked]="dashNested"></ui-switch>
+            </div>
+            <div class="form-check form-switch mt-2">
+                <label class="form-check-label" for="flexSwitchCheckDefault">Video360</label>
+                <ui-switch size='small' class="cheked" [checked]="dashNested"></ui-switch>
+            </div>
+            <div class="form-check form-switch mt-2">
+                <label class="form-check-label" for="flexSwitchCheckDefault">Player Logo</label>
+                <ui-switch size='small' class="cheked" [checked]="dashNested"></ui-switch>
+            </div>
+            <div class="form-check form-switch mt-2">
+                <label class="form-check-label" for="flexSwitchCheckDefault">Dash</label>
+                <ui-switch size='small' class="cheked" [checked]="dashNested"></ui-switch>
+            </div>
+            <div class="form-check form-switch mt-2">
+                <label class="form-check-label" for="flexSwitchCheckDefault">Auto Play</label>
+                <ui-switch size='small' class="cheked" [checked]="dashNested"></ui-switch>
+            </div>
+            <div class="form-check form-switch mt-2">
+                <label class="form-check-label" for="flexSwitchCheckDefault">Auto Reconnect</label>
+                <ui-switch size='small' class="cheked" [checked]="dashNested"></ui-switch>
+                <select class="Auto custom-select" aria-label="Default select example" id="flexSwitchCheckDefault">
+                        <option selected>12s</option>
+                        <option value="1">Twitch</option>
+                        <option value="2">Tele2</option>
+                        <option value="3">Never TV</option>
+                        <option value="3">Vaughn Live</option>
+                    </select>          
+            </div>
+            <div class="form-check form-switch mt-2">
+                <label class="form-check-label" for="flexSwitchCheckDefault">Mute</label>
+                <ui-switch size='small' class="cheked" [checked]="dashNested"></ui-switch>
+            </div>
+            <div class="form-check form-switch mt-2">
+                <label class="form-check-label" for="flexSwitchCheckDefault">Show Controls</label>
+                <ui-switch size='small' class="cheked" [checked]="dashNested"></ui-switch>
+            </div>
+            <div class="form-check form-switch mt-2">
+                <label class="form-check-label" for="flexSwitchCheckDefault">Auto Hide Controls</label>
+                <ui-switch size='small' class="cheked" [checked]="dashNested"></ui-switch>
+            </div>
+            <div class="form-check form-switch mt-2">
+                <label class="form-check-label" for="flexSwitchCheckDefault">Preload Content</label>
+                <ui-switch size='small' class="cheked" [checked]="dashNested"></ui-switch>
+            </div>
+            <div class="form-check form-switch mt-2">
+                <label class="form-check-label" for="flexSwitchCheckDefault">Repeat</label>
+                <ui-switch size='small' class="cheked" [checked]="dashNested"></ui-switch>
+            </div>
+        </div>
+    </div>
+</div>

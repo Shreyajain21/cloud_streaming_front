@@ -1,0 +1,103 @@
+<!-- Sidebar -->
+<!---------
+<div class="sidebar">
+    <div class="bg-light border-right" id="sidebar-wrapper">
+        <h5 class="h">IdStream</h5><br>
+        <div class="list-group list-group-flush" id="items">
+            <section>
+                <a routerLink="/dashboard" class="list-group-item list-group-item-action"><i id="h" class="ri-dashboard-line"></i>Dashboard</a>
+                <a routerLink="channel/channel" class="list-group-item list-group-item-action"><i class=" fas fa-television"></i>Channels</a>
+                <a routerLink="/events/scheduleEvent" class="list-group-item list-group-item-action"><i class="fas fa-calendar"></i>Events</a>
+                <div (click)="expand=!expand" class="list-group-item list-group-item-action"><i id="h" class="ri-sound-module-fill"></i>Manage Channels
+                    <span class="float-right"><i class="down fas fa-angle-right"></i></span></div>
+                <div *ngIf="expand"><a class="dropdown-item" routerLink="/manage-channel/channel-dashboard"> Channel Dashboard</a></div>
+                <div *ngIf="expand"><a class="dropdown-item" routerLink="/channel/editChannel"> Edit Channel</a></div>
+                <div *ngIf="expand"><a class="dropdown-item" routerLink="/manage-channel/push-destination"> Push Destination</a></div>
+                <div *ngIf="expand"><a class="dropdown-item" routerLink="/manage-channel/recording"> Recording</a></div>
+                <div *ngIf="expand"><a class="dropdown-item" routerLink="/manage-channel/transcoding"> Transcoding</a></div>
+                <div *ngIf="expand"><a class="dropdown-item" routerLink="/manage-channel/multi-bitrate"> Multi-Bitrate</a></div>
+                <div *ngIf="expand"><a class="dropdown-item" routerLink="/manage-channel/channel-settings"> Channel Settings</a></div>
+
+
+                <a routerLink="/video-storage/videoStorage" class="list-group-item list-group-item-action"><i id="h" class="ri-thunderstorms-line"></i>Video Storage</a>
+
+                <div (click)="expands=!expands" class="list-group-item list-group-item-action"> <i class="fas fa-chart-bar"></i>Analytics
+                    <span class="float-right"><i class="down fas fa-angle-right"></i></span></div>
+                <div *ngIf="expands"><a class="dropdown-item" routerLink="/analytics/date">Date</a></div>
+                <div *ngIf="expands"><a class="dropdown-item" routerLink="/analytics/region">Region</a></div>
+                <div *ngIf="expands"><a class="dropdown-item" routerLink="/analytics/video">Video</a></div>
+                <div *ngIf="expands"><a class="dropdown-item" routerLink="/analytics/source">Source</a></div>
+
+                <a routerLink="/chat-app/chatApp" class="list-group-item list-group-item-action"><i class="fas fa-comment-alt"></i>Chat App</a>
+                <a routerLink="/help-center/helpCenter" class="list-group-item list-group-item-action"><i id="h" class="ri-question-line"></i>Help Center</a>
+                <a routerLink="/billing/billing" class="list-group-item list-group-item-action"><i id="h" class="ri-bill-line"></i>Billing </a>
+
+                <div (click)="collapse=!collapse" class="list-group-item list-group-item-action"><i class="fas fa-cog"></i>Settings
+                    <span class="float-right"><i class="down fas fa-angle-right"></i></span> </div>
+                <div *ngIf="collapse"><a class="dropdown-item" routerLink="/settings/account">Account</a></div>
+                <div *ngIf="collapse"><a class="dropdown-item" routerLink="/settings/password">Password</a></div>
+                <div *ngIf="collapse"><a class="dropdown-item" routerLink="/settings/payments">Payment</a></div>
+                <div *ngIf="collapse"><a class="dropdown-item" routerLink="/settings/social-alerts">Social Alerts</a></div>
+                <a routerLink="logout" class="list-group-item list-group-item-action bg-light">
+                    <i class="log fas fa-sign-out-alt"></i>Logout</a>
+            </section>
+        </div>
+    </div>
+</div>---->
+<!-- End Page Content -->
+
+
+<div class="back">
+    <div class="side-bar" id="sidebar-wrapper">
+        <h3>IdStream</h3> 
+        <div class="menu">
+            <div class="items"><a routerLink="/dashboard"><i class="fas fa-qrcode"></i>Dashboard</a></div>
+            <div class="items"><a routerLink="channel/channel"><i class=" fas fa-television"></i>Channels</a></div>
+            <div class="items"> <a routerLink="/events/scheduleEvent"><i class="fas fa-calendar"></i>Events</a></div>
+           <div class="items">
+                <a  class="sub-btn" (click)="expand=!expand" ><i class="fas ri-sound-module-fill"></i>Manage Channels <i class="down fas fa-angle-right dropdown"></i></a>
+            </div>
+            <div class="inter sub-menu">
+                <div *ngIf="expand"><a class="dropdown-item" routerLink="/manage-channel/channel-dashboard"> Channel Dashboard</a></div>
+                <div *ngIf="expand"><a class="dropdown-item" routerLink="/channel/editChannel"> Edit Channel</a></div>
+                <div *ngIf="expand"><a class="dropdown-item" routerLink="/manage-channel/push-destination"> Push Destination</a></div>
+                <div *ngIf="expand"><a class="dropdown-item" routerLink="/manage-channel/recording"> Recording</a></div>
+                <div *ngIf="expand"><a class="dropdown-item" routerLink="/manage-channel/transcoding"> Transcoding</a></div>
+                <div *ngIf="expand"><a class="dropdown-item" routerLink="/manage-channel/multi-bitrate"> Multi-Bitrate</a></div>
+                <div *ngIf="expand"><a class="dropdown-item" routerLink="/manage-channel/channel-settings"> Channel Settings</a></div>
+            </div>
+            <div class="items">
+                <a routerLink="/video-storage/videoStorage" ><i class="fas ri-thunderstorms-line"></i>Video Storage</a>
+            </div>
+           <!---- <div class="items">
+                <a class="sub-btn" (click)="expands=!expands"> <i class="fas fa-chart-bar"></i>Analytics <i class="down fas fa-angle-right dropdown"></i></a>
+            </div> ---->
+            <div class="items">
+                <a class="sub-btn" (click)="expands=!expands"> <i class="fas fa-chart-bar"></i>Analytics<span class="float-right"><i class="down fas fa-angle-right"></i></span> </a>
+            </div>
+            <div class="inter sub-menu">
+                <div *ngIf="expands"><a class="dropdown-item" routerLink="/analytics/date">Date</a></div>
+                <div *ngIf="expands"><a class="dropdown-item" routerLink="/analytics/region">Region</a></div>
+                <div *ngIf="expands"><a class="dropdown-item" routerLink="/analytics/video">Video</a></div>
+                <div *ngIf="expands"><a class="dropdown-item" routerLink="/analytics/source"> Source</a></div>
+            </div>
+            <div class="items"><a routerLink="/chat-app/chatApp" ><i class="fas fa-comment-alt"></i>Chat App</a></div>
+            <div class="items"><a routerLink="/help-center/helpCenter"><i class="fas ri-question-line"></i>Help Center</a></div>
+            <div class="items"><a routerLink="/billing/billing" ><i class="fas ri-bill-line"></i>Billing </a></div>
+
+            <div class="items">
+                <a (click)="collapse=!collapse"><i class="fas fa-cog"></i>Settings<span class="float-right"><i class="down in fas fa-angle-right"></i></span> </a>
+            </div>
+            <div class="inter sub-menu">
+                <div *ngIf="collapse"><a class="dropdown-item" routerLink="/settings/account">Account</a></div>
+                <div *ngIf="collapse"><a class="dropdown-item" routerLink="/settings/password">Password</a></div>
+                <div *ngIf="collapse"><a class="dropdown-item" routerLink="/settings/payments">Payment</a></div>
+                <div *ngIf="collapse"><a class="dropdown-item" routerLink="/settings/social-alerts">Social Alerts</a></div>
+            </div>
+            <div class="items">
+                <a  routerLink="logout"><i class="log fas fa-sign-out-alt"></i>Logout</a>
+            </div>
+            
+        </div>
+    </div>
+</div>

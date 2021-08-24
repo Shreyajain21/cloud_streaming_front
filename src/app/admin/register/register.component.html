@@ -1,0 +1,115 @@
+<div class="row">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title mb-4">Register</h4>
+
+                <form [formGroup]="UserDetails">
+                    <div class="form-group">
+                        <label>First Name</label>
+                        <input type="text" class="form-control form-control-lg" formControlName="firstName" placeholder="Enter First Name" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
+                        <div *ngIf="submitted && f.firstName.errors" class="form-text text-danger">
+                            <div *ngIf="f.firstName.errors.required">First Name is required!</div>
+                            <div *ngIf="f.firstName.errors.pattern">First Letter should be Capital </div>
+                            <div *ngIf="f.firstName.errors?.minlength"> First Name must be at least 6 character is required!</div>
+                            <div *ngIf="f.firstName.errors?.maxlength">First Name must be max 20 character is required!</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Last Name</label>
+                        <input type="text" class="form-control form-control-lg" formControlName="lastName" placeholder="Enter Last Name" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
+                        <div *ngIf="submitted && f.lastName.errors" class="form-text text-danger">
+                            <div *ngIf="f.lastName.errors.required">Name is required!</div>
+                            <div *ngIf="f.lastName.errors?.minlength">Name must be at least 6 character is required!</div>
+                            <div *ngIf="f.lastName.errors?.maxlength">Name must be max 20 character is required!</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Gender</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" value="male" formControlName="gender" />
+                            <label class="form-check-label">
+                            Male
+                          </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" value="female" formControlName="gender" />
+                            <label class="form-check-label">
+                            Female
+                          </label>
+                        </div>
+                        <div [ngClass]="{ 'is-invalid': submitted && f.gender.errors }">
+                            <div *ngIf="submitted && f.gender.errors" class="form-text text-danger">
+                                <div *ngIf="f.gender.errors.required"> Gender is required. </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>D.O.B</label>
+                        <input type="date" class="form-control form-control-lg" name="date" id="dateOfBirth" formControlName="dateOfBirth" placeholder="dd-mm-yyyy" [ngClass]="{ 'is-invalid': submitted && f.dateOfBirth.errors }" />
+                        <div *ngIf="submitted && f.dateOfBirth.errors" class="form-text text-danger">
+                            <div *ngIf="f.dateOfBirth.errors.required"> D.O.B is required. </div>
+                        </div>
+                    </div>
+                    <div class="form-group ">
+                        <label>Mobile</label>
+                        <div formArrayName="mobileNo">
+                            <div *ngFor="let mobile of mobileNumber.controls; let i=index" [formGroupName]="i">
+                                <div class="row">
+                                    <div class="col">
+                                        <input type="number" class="form-control form-control-lg" formControlName="countryCode" placeholder="Enter country code" [ngClass]="{ 'is-invalid': submitted && f.countryCode.errors }" />
+                                        <div *ngIf="submitted && f.countryCode.errors" class="form-text text-danger">
+                                            <div *ngIf="f.countryCode.errors.required"> Country Code is required. </div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <input type="number" class="col form-control form-control-lg" formControlName="number" placeholder="Enter mob no." [ngClass]="{ 'is-invalid': submitted && f.number.errors }" />
+                                        <div *ngIf="submitted && f.number.errors" class="form-text text-danger">
+                                            <div *ngIf="f.number.errors.required"> Mobile is required. </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" class="form-control form-control-lg" formControlName="email" placeholder="Enter email" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                        <div *ngIf="submitted && f.email.errors" class="form-text text-danger">
+                            <div *ngIf="f.email.errors.required">Email is required!</div>
+                            <div *ngIf="f.email.errors.pattern">Email Enter abc@gmail.com</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" class="form-control form-control-lg" formControlName="password" placeholder="********" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+                        <div *ngIf="submitted && f.password.errors" class="form-text text-danger">
+                            <div *ngIf="f.password.errors.required">Password is required!</div>
+                            <!-- <div *ngIf="f.password.errors?.pattern">
+                                <p>Password must be Strong</p><br>
+                                <p>one uppercase letter, one lowercase letter, and one number or special character.</p>!
+                            </div> -->
+                        </div>
+                    </div>
+                    <p class="card-text">Note: This URL can not be changed after registration</p>
+                    <div class="form-group">
+                        <button type="submit" (click)="onSubmit()" style="background-color: rgba(204, 72, 24, 0.993);color: white;text-align:center" class="bttn">Register</button>
+                    </div>
+                    <div class="text-center text-muted mt-4 font-size:14px;">
+                        Already have an account? <a routerLink="/login" class="text-primary">Log In here <i
+                              ></i></a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="iimage">
+            <div class="center-align">
+                <img src="./../assets/log.jfif">
+            </div>
+        </div>
+    </div>
+</div>

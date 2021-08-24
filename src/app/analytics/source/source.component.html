@@ -1,0 +1,42 @@
+<div class="back">
+    <section>
+        <div class="row">
+            <div>
+                <h5 class="card-title mb-4 mt-3">Source Report</h5>
+            </div>
+            <!-- <div style="display: block;">
+                <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions" [plugins]="barChartPlugins" [legend]="barChartLegend" [chartType]="barChartType">
+            </canvas>
+            </div> -->
+            <div style="display: block;">
+                <!-- <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions" [plugins]="barChartPlugins" [legend]="barChartLegend" [chartType]="barChartType">
+                </canvas> -->
+    
+                <canvas baseChart [chartType]="'bar'" [datasets]="chartData" [labels]="labels" [options]="chartOptions" [legend]="true" [colors]="colors" (chartClick)="onChartClick($event)">
+            </canvas>
+            </div>
+        </div>
+        <div class="row">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Source URL</th>
+                        <th>Impressions</th>
+                        <th>Views</th>
+                        <th>Avg. % Watched</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- <tr *ngFor="let source of Regions"> -->
+                    <!-- <td>{{}}</td>
+                        <td>{{}}</td>
+                        <td>{{}}</td>
+                        <td>{{}}</td> -->
+                    <!-- </tr> -->
+                </tbody>
+            </table>
+        </div>
+    
+    
+    </section>
+</div>

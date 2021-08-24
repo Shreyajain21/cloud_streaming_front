@@ -1,0 +1,28 @@
+.buton {
+    width: 130px;
+    align-items: center;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: #d33317;
+    margin-bottom: 15px;
+    /* margin-left: 25px; */
+}
+
+.fas {
+    margin: 2px;
+    color: #f85e42;
+    border-radius: 50%;
+    border: 0px;
+    border: 0;
+    width: 35px;
+    height: 35px;
+    padding: 0;
+    min-width: 0;
+    background-color: #f18d6511;
+    cursor: pointer;
+    display: inline-flex;
+    outline: 0;
+    align-items: center;
+    justify-content: center;
+}

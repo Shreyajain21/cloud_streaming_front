@@ -1,0 +1,51 @@
+.navbar-brand {
+    font-weight: 600;
+    font-size: 25px;
+}
+
+.text-center {
+    margin-top: 8%;
+}
+
+p {
+    font-size: 18px;
+    opacity: .6;
+}
+
+.header img {
+    margin-top: -7%;
+    width: 20%;
+    margin-left: 2%;
+}
+
+button {
+    padding: 8px 20px;
+    margin-top: 18px;
+    font-size: 20px;
+    border: none;
+    color: white;
+    background-color: orangered;
+    border-radius: 4px;
+}
+
+.input-group {
+    border: none;
+    width: 99%;
+    /* height: 35px; */
+    padding: 0px 10px;
+    margin-left: 5%;
+    align-items: center;
+    margin-top: 26%;
+    box-shadow: 2px 1px 3px 1px rgb(182, 182, 182);
+}
+
+.input-group>i {
+    font-size: 22px;
+    color: #777;
+}
+
+.input-group>input {
+    flex: 1;
+    height: 30px;
+    border: none;
+}

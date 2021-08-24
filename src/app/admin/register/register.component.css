@@ -1,0 +1,17 @@
+p {
+    /* font-size: 10px; */
+    opacity: 50%;
+}
+
+.text-center {
+    position: absolute;
+    left: 25%;
+    top: 90%;
+}
+
+a {
+    /* font-weight: bold; */
+    text-decoration: none;
+    color: black;
+    transform: translate(-10, -10);
+}

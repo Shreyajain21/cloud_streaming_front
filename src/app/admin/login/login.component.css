@@ -1,0 +1,58 @@
+.btn {
+    margin: 15px;
+    margin-top: 60px;
+}
+
+h6 {
+    margin-top: 30px;
+}
+
+
+/* .fab{
+    pating-right: 10px;
+} */
+
+i {
+    margin-right: 10px;
+}
+
+.psw {
+    text-align: right;
+    margin-bottom: 25px;
+}
+
+a {
+    /* font-weight: bold; */
+    text-decoration: none;
+    color: black;
+    /* position: absolute;
+    left: 30%;
+    top: 90%; */
+    transform: translate(-10, -10);
+}
+
+.p {
+    position: absolute;
+    left: 32%;
+    top: 95%;
+}
+
+.line-beside {
+    text-align: center;
+    border-left: 80px;
+    border-right: 30px;
+    /* width: 150px; */
+    line-height: 1px;
+}
+
+h6.sidelines {
+    text-align: center;
+    border-bottom: 1px solid;
+    height: 0.7em;
+}
+
+h6.sidelines span {
+    display: inline-block;
+    background: #fff;
+    padding: 0 1.5em;
+}

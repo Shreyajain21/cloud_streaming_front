@@ -1,0 +1,55 @@
+<div class="row">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title mb-4">Login</h5>
+                <div class="first-side">
+                    <form [formGroup]="loginForm">
+                        <div class="form-group">
+                            <label>Enter Username</label>
+                            <input type="email" formControlName="email" class="form-control" placeholder="Enter Username" [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
+                            <div *ngIf="submitted && f.email.errors" class="form-text text-danger">
+                                <div *ngIf="f.email.errors?.required">Username is required!</div>
+                                <div *ngIf="f.email.errors?.minlength">Username must be at least 6 character is required!</div>
+                                <div *ngIf="f.email.errors?.maxlength">Username must be max 20 character is required!</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Password</label>
+                            <input type="password" formControlName="password" class="form-control" placeholder="Enter Password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
+                            <div *ngIf="submitted && f.password.errors" class="form-text text-danger">
+                                <div *ngIf="f.password.errors?.required">Password is required!</div>
+                                <div *ngIf="f.password.errors?.minlength">Password must be at least 6 character is required!</div>
+                                <div *ngIf="f.password.errors?.maxlength">Password must be max 20 character is required!</div>
+
+                            </div>
+                        </div>
+                        <div class="psw">Forgot <a routerLink="/forgot-password">Password?</a>
+                        </div>
+                        <div class="form-group">
+                            <button (click)="submit($event)" style="background-color: rgba(192, 66, 20, 0.993);color: white;text-align:center" class="bttn">Login</button>
+                        </div>
+                        <div>
+                            <!-- <p> &boxh;&boxh;&boxh;&nbsp;or login with &nbsp;&boxh;&boxh;&boxh;</p> -->
+                            <h6 class="sidelines text-muted"><span>or login with</span></h6>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-outline-danger"><i class="fab fa-google-plus-g">Google</i></button>
+                            <button type="submit" class="btn btn-outline-primary"><i class="fab fa-facebook ">Facebook</i></button>
+                            <button type="submit" class="btn btn-outline-info"><i class="fab fa-twitter" >Twitter</i></button>
+                        </div>
+
+                        <p class="p mb-3 mt-2 font-weight-normal text-center  text-muted"> Don't have an account &nbsp;<a routerLink="/register">Register here</a></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="iimage">
+            <div class="center-align">
+                <img src="./../assets/log.jfif">
+            </div>
+        </div>
+    </div>
+</div>

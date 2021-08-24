@@ -1,0 +1,60 @@
+<section class="ml-5">
+    <div class="bg">
+        <div class="row">
+            <ul class="list-group list-group-flush ">
+                <li class="list-group-item">
+                    <div *ngIf="header?.title">
+                        <h5 class="card-title mb-4 mt-3">{{header?.title}}</h5>
+                    </div>
+                    <div class="row">
+                        <div *ngIf="header?.selectChannel">
+                            <label class="col-md-2 mt-2 select-channel">Select Channel</label>
+                            <div class="col-md-4 mb-2">
+                                <select class="form-select" aria-label="Default select example">
+                                <option selected>Default</option>
+                                <option value="1">Twitch</option>
+                                <option value="2">Tele2</option>
+                                <option value="3">Never TV</option>
+                                <option value="3">Vaughn Live</option>
+                              </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3"></div>
+                        <div class="col-md-3">
+                            <!-- <div class="col-md-2"> -->
+                            <div *ngIf="header?.pushDest">
+                                <button routerLink="/manage-channel/destination" class="r-4 buton bg-white">
+                                           <div class="push">
+                                            <i class="fas fa-plus">Push Destination</i>
+                                           </div> 
+                                        </button></div>
+                            <div *ngIf="header?.bulkOperation">
+                                <select class="sele form-select" aria-label="Default select example">
+                                                    <option selected>Bulk Operations</option>
+                                                    <option value="1">Turn Off All</option>
+                                                    <option value="2">Turn On All</option>
+                                                    <option value="3">Remove All</option>
+                                                  </select>
+                            </div>
+                            <div *ngIf="header?.addChannel">
+                                <button class="btn-color mt-0" [routerLink]="['/channel/createChannel']">
+                                            <i class="fas fa-plus">Add Channel</i></button>
+                                <!-- </div> -->
+                            </div>
+                            <!-- <div *ngIf="addChannel">
+                                <button class="url">
+                                <i class="ri-links-fill" (click)="openModel(embededCode)">Streaming URL</i>
+                            </button>
+                                <button id="red">
+                              <i class="ri-code-s-slash-fill"></i>
+                              <h3>Embed Code</h3>
+                            </button>
+                            </div> -->
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <hr>
+</section>

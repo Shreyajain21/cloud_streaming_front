@@ -1,0 +1,80 @@
+<section>
+    <div class="">
+        <div>
+            <h4 class="mb-4 mt-3">Add Channel</h4>
+        </div>
+        <hr>
+        <div class="card">
+            <form [formGroup]="channelDetailsForm">
+                <div class="form-group">
+                    <label>Channel Name</label>
+                    <input type="text" formControlName="channelName" class="form-control form-control-lg" placeholder="Twitch" [ngClass]="{ 'is-invalid': submitted && f.channelName.errors }">
+                    <div *ngIf="submitted && f?.channelName?.errors" class="form-text text-danger">
+                        <div *ngIf="f.channelName.errors?.required">Channel Name is required!</div>
+                        <div *ngIf="f.channelName.errors?.minlength">Channel Name must be at least 6 character is required!</div>
+                        <div *ngIf="f.channelName.errors?.maxlength">Channel Name must be max 20 character is required!</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Channel Logo</label>
+                    <div class="input-group mt-2  mb-3">
+                        <div class="custom-file">
+                            <label for="upload-photo"><div class="color-btn-browser">Browser</div></label><br>
+                            <input type="file" (change)="uploadFile($event)" class="form-control" formControlName="channelLogo" placeholder="Enter Logo" name="photo" id="upload-photo" />
+                            <label class=" upload-photo form-control form-control-lg">{{uploadPhoto}}</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Channel Type</label>
+                    <div style="display:flex">
+                        <div class="color1-btn" [ngClass]="{'active': isChannelType}" (click)="isChannelType = true">
+                            Linner
+                        </div>
+                        <div class="color-btn" [ngClass]="{ 'active': !isChannelType}" (click)="isChannelType = false">
+                            On Demand
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Stream Name</label>
+                    <input type="text" formControlName="streamName" class="form-control form-control-lg" placeholder="Stream Name" [ngClass]="{'is-invalid': submitted && f.streamName.errors }">
+                    <div *ngIf="submitted && f?.streamName?.errors" class="form-text text-danger">
+                        <div *ngIf="f.streamName.errors?.required">Stream Name is required!</div>
+                        <div *ngIf="f.streamName.errors?.minlength">Stream Name must be at least 6 character is required!</div>
+                        <div *ngIf="f.streamName.errors?.maxlength">Stream Name must be max 20 character is required!</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" formControlName="password" class="form-control form-control-lg" placeholder="********" [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
+                    <div *ngIf="submitted && f.password.errors" class="form-text text-danger">
+                        <div *ngIf="f.password.errors?.required">Password is required!</div>
+                        <!--  <div *ngIf="f.password.errors?.minlength">Password must be at least 6 character is required!</div> -->
+                        <!-- <div *ngIf="f.password.errors?.pattern">
+                <p>Password must be Strong</p><br>
+                <p>one uppercase letter, one lowercase letter, and one number or special character.</p>!
+            </div> -->
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="pr-4 ">Secure</label>
+                    <ui-switch size='small' [checked]="secure" formControlName="securePlay"></ui-switch>
+                    <div *ngIf="channelDetailsForm?.get('secure')?.value">
+                        <input type="date" value="date" pattern="dd/mm/yyyy" class="form-control form-control-lg" formControlName="playerCountDown" placeholder="dd-mm-yyyy" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="pr-4 pb-3">Player Countdown</label>
+                    <ui-switch size='small' [checked]="playerCountDown" formControlName="playerCountDown"></ui-switch>
+                    <div *ngIf="channelDetailsForm?.get('playerCountDown')?.value">
+                        <input type="date" value="2000-09-09" pattern="dd/mm/yyyy" class="form-control form-control-lg" formControlName="playerCountDown" placeholder="dd-mm-yyyy" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button (click)="addChannel()" style="color: white;text-align:center" class="buton">Add</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

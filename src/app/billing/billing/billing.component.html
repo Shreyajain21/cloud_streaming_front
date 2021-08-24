@@ -1,0 +1,97 @@
+<div class="card">
+    <div class="container-fluid">
+        <a class="navbar-brand">Billing</a>
+    </div>
+    <div class="center">
+        <div class="left">
+            Your plan
+            <div class="card">
+                <h5>Creator</h5>
+                <p>Billed annually</p>
+                <!----<li class="text-muted">Bootstrap Parcel starter (coming soon!)</li>---->
+                <div class="text"><i class="fa fa-check"></i>Unlimited viewers</div>
+                <div class="text"><i class="fa fa-check"></i>Live recording</div>
+                <div class="text"><i class="fa fa-check"></i>24/7 customer support</div>
+                <div class="text"><i class="fa fa-check"></i>VOD streaming</div>
+            </div>
+        </div> 
+        <div class="right">
+            Next Bill
+            <div class="text">10/11/2020</div>
+            <div class="text">$ 98.00</div>
+        </div>
+    </div>
+    <div class="btn">
+        <button type="button" class="Upgrade btn-lg">Upgrade</button>
+        <button type="button" class="pl btn-lg">Cancel Plan</button>
+    </div>
+    <hr>
+    <div class="end mr-5">Payments Method
+        <div class="pip">
+            <div class="text">
+                <i class="fa fa-cc-visa"></i>
+                <p>******1456<i class="fa fa-lock mt-1"></i></p>
+            </div>
+            <div class="button mr-5">
+                <button class="remove" type="button">Remove</button>
+                <button class="change" type="button" (click)="openCardDetails(updateCardDetails)">Change Card</button>
+            </div>
+        </div>
+    </div>
+    <div class="popu">
+        <ng-template class="m-5" #updateCardDetails let-c="close" let-d="dismiss">
+            <h5 class="card-title text-center  mb-4 mt-5">Update Your Card Details</h5>
+            <div class="intre">
+                <form [formGroup]="cardsDetailForm">
+                    <div class="form-group">
+                        <label><b >Card Number</b></label>
+                        <input type="number" formControlName="cardNumber" class="textin form-control form-control-lg" placeholder="Card Number">
+                        <!-- [ngClass]="{ 'is-invalid': submitted && f.cardNumber?.errors }"> -->
+                        <!-- <div *ngIf="cardNumber && f.cardNumber?.errors" class="form-text text-danger">
+                            <div *ngIf="f.cardNumber.errors?.required">Password is required!</div>
+                        </div> -->
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <label><b>Card Expiration(MM/YY)</b></label>
+                                <select class="form-select form-control form-control-lg" formControlName="cardExpDate" aria-label="Default select example">
+                    <option selected></option>
+                    <option value="1"></option>
+                    <option value="2"></option>
+                    <option value="3"></option>
+                    <option value="3"></option>
+                  </select>
+                            </div>
+                            <div class="col-md-3">
+                                <select class="mt-5 form-select form-control form-control-lg" aria-label="Default select example">
+                    <option selected></option>
+                    <option value="1"></option>
+                    <option value="2"></option>
+                    <option value="3"></option>
+                    <option value="3"></option>
+                  </select>
+                            </div>
+                            <div class="col-md-6 mt-3">
+                                <label><b>Card CVC/CVV</b></label>
+                                <input type="number" formControlName="cardCvc" class="form-control form-control-lg" placeholder="Card Verification Code(CVC)">
+                                <!-- [ngClass]="{ 'is-invalid': submitted && f.cardCvc?.errors }"> -->
+                                <!-- <div *ngIf="cardCvc && f.cardCvc?.errors" class="form-text text-danger">
+                                    <div *ngIf="f.cardCvc.errors?.required">Card CVC/CVV is required!</div>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Card Holder Name</label>
+                        <input type="text" formControlName="cardHolderName" class="form-control form-control-lg" placeholder="Card Holder Name">
+                    </div>
+                    <div class="form-group">
+                        <button (click)="onSaveCards()" style="color: white;text-align:center" class="buton">Save Card</button>
+                        <button type="button" (click)="c('Close click')" style="color: white;text-align:center" class="buton">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </ng-template>
+    </div>
+</div>

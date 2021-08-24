@@ -1,0 +1,204 @@
+<nav class="navbar navbar-light bg-white">
+    <div class="container-fluid">
+        <a class="navbar-brand ">Events</a>
+        <div class="btn-group" role="group">
+            <a class="list-group-item list-group-item-action" (click)="openCreatEvent(createNewEvent)"><i class="fa fa-plus-circle"></i>Create Event</a>
+        </div>
+    </div>
+</nav>
+<div class="left">
+    <ul class="list-group mb-3" >
+        <li class="list-group-item d-flex justify-content-between lh-condensed">
+            <p><img src="assets/small.jpg" alt=""></p>
+            <div>
+                <h6>54120-6</h6>
+                <small class="text-muted">Apr 29Thursday 5:36 PM</small>
+            </div>
+            <div class="cir inright">
+                <i class="fa fa-ellipsis-v" (click)="expands=!expands"></i>
+                    <div *ngIf="expands" class="back">
+                        <a class="inter d-flex" (click)="openEdit(editEvent)"><i class="fas fa-edit justify-content-between">Edit</i></a>
+                        <hr>
+                        <a class="inter d-flex" (click)="openInvitePeople(invitePeople)"><i class="fas fa-user-plus" aria-hidden="true">Invite People</i></a>
+                        <hr>
+                        <a class="inter d-flex" (click)="openDeleteEvent(deleteEvent)"><i class="fas fa-trash">Delete</i></a>
+                    </div>
+            </div>
+        </li>
+        <li class="list-group-item d-flex justify-content-between lh-condensed">
+            <p><img src="assets/R.png" style="max-width: 540px;" alt=""></p>
+            <div>
+                <h6 class="tx">64574</h6>
+                <small class="text-muted">May 13, Thursday . 11:12PM</small>
+            </div>
+            <span class="inright"><i class="fa fa-ellipsis-v"></i></span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between lh-condensed">
+            <p><img src="assets/R.png" alt=""></p>
+            <div>
+                <h6>64574</h6>
+                <small class="text-muted">May 13, Thursday . 11:12PM</small>
+            </div>
+            <span class="inright"><i class="fa fa-ellipsis-v"></i></span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between lh-condensed">
+            <p><img src="assets/small.jpg" alt=""></p>
+            <div>
+                <h6>54120 - 6</h6>
+                <small class="text-muted">Apr 29Thursday .5:36 PM</small>
+            </div>
+            <span class="inright"><i class="fa fa-ellipsis-v"></i></span>
+        </li>
+    </ul>
+</div>
+<div class="line"></div>
+<div class="right">
+    <p>Past Events</p>
+    <li class="list-group-item d-flex justify-content-between lh-condensed">
+        <p><img src="assets/small.jpg" alt=""></p>
+        <div>
+            <h6>54120 - 6</h6>
+            <small class="text-muted">Apr 29Thursday .5:36 PM</small>
+        </div>
+    </li>
+</div>
+
+<ng-template #choosevideo let-c="close" let-d="dismiss">
+    <h5 class="card-title text-center mb-4 mt-3">Choose a video</h5>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span class="cls"> <i class="fa fa-times" aria-hidden="true"></i> </span>
+    </button>
+    <p>Upgrade to Professional to unlock streaming Pre-Recorded videos.</p>
+    <button type="button" (click)="c('Close click')" style="color: white;text-align:center" class="buton">upgrade</button>
+    <button type="button" (click)="c('Save click')" style="color: white;text-align:center" class="buton">Next</button>
+    <!-- <button (click)="updatePreset()" style="color: white;text-align:center" class="buton">upgrade</button> -->
+</ng-template>
+<ng-template class="first" #createNewEvent let-c="close" let-d="dismiss">
+    <h5 class="card-title text-center mb-4 mt-3">Create New Event</h5>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+        <span> <i class="fa fa-times" aria-hidden="true"></i></span>
+    </button>
+        <form  [formGroup]="eventDetailsForm">
+            <div class="Title form-group">
+                <label>Event Title</label>
+                <input type="text" formControlName="eventTitle" class="form-control form-control-lg" placeholder="Full Name" [ngClass]="{'is-invalid': submitted && f.streamName.errors }">
+            </div>
+            <div class="date form-group ">
+                <div class="row">
+                    <div class="col">
+                        <label>Date</label>
+                        <input type="date" formControlName="date" class="form-control form-control-lg" placeholder="" [ngClass]="{'is-invalid': submitted && f.date.errors }">
+                        <div *ngIf="submitted && f?.date?.errors" class="form-text text-danger">
+                            <div *ngIf="f.date.errors?.required">Date is required!</div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <label>Starts At</label><br>
+                        <input type="text" formControlName="startAt" class="form-control form-control-lg" placeholder="Full Name" [ngClass]="{'is-invalid': submitted && f.streamName.errors }">
+                    </div>
+                </div>
+            </div>
+            <div class="Details form-group">
+                <label>Event Details</label><br>
+                <textarea formControlName="eventDetails" (ngModelChange)="valueChange($event)" [maxlength]="maxChars" class="form-control form-control-lg" placeholder="Event Details"></textarea>
+                <span class="remaning">{{remainingText}}/{{maxChars}}</span>
+            </div>
+            <div class="small form-group">
+                <h3>Thumbnail</h3>
+                <img src="assets/small.jpg" alt="">
+            </div>
+            <div class="cnv form-group">
+                <button (click)="onCreateNewEvent()" style="color: white;text-align:center" class="buton">Create New Event</button>
+            </div>
+    </form>
+</ng-template>
+<ng-template class="edit" #editEvent let-c="close" let-d="dismiss">
+    <h5 class="card-title text-center mb-4 mt-3">Edit Event</h5>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+        <span class="cls"> <i class="fa fa-times" aria-hidden="true"></i> </span>
+      </button>
+      <div class="pra">
+        <p>Co-hosts will have event editing privileges and can join the broadcast
+        Only the event creator can start the <span>live video for the event</span></p>
+      </div>
+    <form>
+        <div class="inp form-group">
+            <div class="row">
+                <div class="col">
+                    <label>Date</label>
+                    <input type="date" formControlName="date" class="form-control form-control-lg" placeholder="" [ngClass]="{ 'is-invalid': submitted && f.date.errors }">
+                    <div *ngIf="submitted && f?.date?.errors" class="form-text text-danger">
+                        <div *ngIf="f.date.errors?.required">Date is required!</div>
+                    </div>
+                </div>
+                <div class="col">
+                    <label>Starts At</label><br>
+                    <input type="text" formControlName="startAt" class="form-control form-control-lg" placeholder="Start At" [ngClass]="{'is-invalid': submitted && f.startAt.errors }">
+                </div>
+            </div>
+        </div>
+        <div class="btu form-group">
+            <button type="button" (click)="c('Save click')" style="color: white;text-align:center" class="buton">Delete</button>
+            <button (click)="onEditEvent()" style="color: white;text-align:center" class="buton">Edit Event</button>
+        </div>
+    </form>
+
+</ng-template>
+
+<ng-template class="invite" #invitePeople let-c="close" let-d="dismiss">
+    <h5 class="card-title text-center mb-4 mt-3">Invite People</h5>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+        <span class="cls"> <i class="fa fa-times" aria-hidden="true"></i> </span>
+      </button>
+    <h6 class="pr">Use this link to invite guests to your stream(Live Studio Only)</h6>
+    <form>
+        <div class="inputin form-group">
+            <div class="row">
+                <div class="col-md-10">
+                    <input type="text" formControlName="channelName" class="form-control form-control-lg" #people placeholder="" />
+                </div>
+            
+                <div class="col-md-2">
+                    <button (click)="onCopy(people)" style="color: rgb(255, 115, 0);text-align:center" class="copy">Copy</button>
+                </div>
+            </div>
+            <h4 class="text-center">OR</h4>
+            <div class="row">
+                <div class="col-md-10">
+                    <input type="text" formControlName="email" class="form-control form-control-lg" #people placeholder="" />
+                </div>
+                <div class="col-md-2">
+                    <button (click)="onSendEmail()" style="color: rgb(255, 115, 0);text-align:center" class="send">Send</button>
+                </div>
+            </div>
+        </div>
+        <!-- <button (click)="onSendEmail()" style="color: white;text-align:center" class="buton">Send Email</button> -->
+        <button (click)="onPeopleInvite()" style="color: white;text-align:center" class="buton done">Done</button>
+    </form>
+</ng-template>
+
+<ng-template class="btn-secandry" #deleteEvent let-c="close" let-d="dismiss">
+    <h5 class="card-title text-center mb-4 mt-3">Delete Event</h5>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+        <span class="cls"><i class="fa fa-times" aria-hidden="true"></i> </span>
+    </button>
+    <div class="file mt-4 ">
+        <li class="fil list-group-item  d-flex justify-content-between lh-condensed">
+            <p><img src="assets/R.png" alt=""></p>
+            <div>
+                <h6>64574</h6>
+                <small class="text-muted">May 13, Thursday . 11:12PM</small>
+            </div>
+        </li>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+        <label class="form-check-label" for="flexCheckDefault">
+          <p>I understand that deleting "64574" is permanent and cannot be undone.</p>
+        </label>
+    </div>
+    <div class="delete">
+        <button type="button" (click)="c('Close click')" style="color: white;text-align:center" class="buton">Cancel</button>
+        <button type="button" (click)="onDeleteEvent($event)" style="color: white;text-align:center" class="buton">Delete</button>
+    </div>
+</ng-template>

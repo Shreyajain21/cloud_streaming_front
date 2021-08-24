@@ -1,0 +1,25 @@
+<div class="row">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <form [formGroup]="otpDetailForm">
+                    <div class="form-group">
+                        <label>Enter Otp</label>
+                        <input type="password" class="form-control" formControlName="otp" placeholder="Enter Otp" />
+                    </div>
+                    <div class="form-group">
+                        <button (click)="otpVerification()" style="background-color: rgba(204, 72, 24, 0.993);
+                        color: white;text-align:center" class="bttn">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="iimage">
+            <div class="center-align">
+                <img src="./../assets/log.jfif">
+            </div>
+        </div>
+    </div>
+</div>

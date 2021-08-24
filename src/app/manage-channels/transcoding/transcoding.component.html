@@ -1,0 +1,240 @@
+<app-topbar [header]="header"></app-topbar>
+<section>
+    <div class="row">
+        <div class="card">
+            <form [formGroup]="TranscodingDetailsForm">
+                <div class="form-group">
+                    <label>Output Channels</label>
+                    <input type="text" formControlName="channelName" class="form-control form-control-lg" placeholder="Output Channels" [ngClass]="{ 'is-invalid': submitted && f.channelName.errors }">
+                    <div *ngIf="submitted && f?.channelName?.errors" class="form-text text-danger">
+                        <div *ngIf="f.channelName.errors?.required">Channel Name is required!</div>
+                        <div *ngIf="f.channelName.errors?.minlength">Channel Name must be at least 6 character is required!</div>
+                        <div *ngIf="f.channelName.errors?.maxlength">Channel Name must be max 20 character is required!</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="pr-4">Transcoding Status</label>
+                    <ui-switch size='small' [checked]="TransStatus"></ui-switch>
+                    <div *ngIf="false">
+                        <input type="date" pattern="dd/mm/yyyy" class="form-control form-control-lg" formControlName="playerCountDown" placeholder="dd-mm-yyyy" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <label class="mt-2">Preset</label>
+                        <div class="col-md-10 mb-2">
+                            <select class="form-select form-control form-control-lg" aria-label="Default select example">
+                                <option selected>144p_260p_360p_720p</option>
+                                <option value="1">260p_360p_720p_1080p</option>
+                                <option value="2">360p_720p_1280p</option>
+                                  </select>
+                        </div>
+                        <div class="col-md-2">
+                            <i class="fas fa-plus" (click)="openinfo(addPreset)"></i>
+                            <i class="fas fa-edit" (click)="openModel(updatePreset)"></i>
+                            <i class="fas fa-trash" (click)="deletePreset()"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label class="pr-4 pb-1"><b>Code Source To Output</b></label>
+                            <ui-switch size='small' [checked]="codeSource"></ui-switch>
+                        </div>
+                        <!-- <div class="col-md-4"> -->
+                        <div *ngIf="false">
+                            <div class="col-md-4">
+                                <input type="text" class="form-control form-control-lg" formControlName="sourceName" placeholder="Source Name" />
+
+                            </div>
+                            <div class="col-md-4">
+                                <input type="number" class="form-control form-control-lg" formControlName="sourceBandwith" placeholder="Source Bandwidth" />
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Transcode Output URL</label>
+                    <div class="row">
+                        <div class="col-md-11">
+                            <input type="text" formControlName="channelName" class="form-control form-control-lg" placeholder="Transcode Output URL" #outputUrl [ngClass]="{ 'is-invalid': submitted && f.channelName.errors }">
+                            <div *ngIf="submitted && f?.channelName?.errors" class="form-text text-danger">
+                                <div *ngIf="f.channelName.errors?.required">Channel Name is required!</div>
+                            </div>
+                            <!-- <input type="text" placeholder="Enter text to be copied" #userinput> -->
+                        </div>
+                        <div class="col-md-1">
+                            <i class="fas fa-clone" (click)="copyText(outputUrl)"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Transcode Emded Code</label>
+                    <div class="row ">
+                        <div class="col-md-11 "> <input type="password " formControlName="password " #embedCode class="form-control form-control-lg " placeholder="******** " [ngClass]="{ 'is-invalid': submitted && f.password.errors } ">
+                            <div *ngIf="submitted && f.password.errors " class="form-text text-danger ">
+                                <div *ngIf="f.password.errors?.required ">Password is required!</div>
+                            </div>
+                        </div>
+                        <div class="col-md-1 ">
+                            <!-- <i class="fas fa-clone " (click)="copyInputMessage()"></i> -->
+                            <i class="fas fa-clone " (click)="copyText(embedCode)"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group ">
+                    <button (click)="onTranscoding() " style="color: white;text-align:center " class=" mr-4 buton ">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<ng-template #addPreset let-c="close " let-d="dismiss ">
+    <section>
+        <h5 class="card-title text-center mb-4 mt-3 ">Add New Preset</h5>
+        <!-- <form [formGroup]="PresetDetailsForm "> -->
+        <div class="main">
+            <form>
+                <div class=" form-group ">
+                    <label>Preset Name</label>
+                    <input type="text " formControlName="channelName " class="form-control form-control-lg " placeholder="Enter Preset Name " [ngClass]="{ 'is-invalid': submitted && f.channelName.errors } ">
+                    <div *ngIf="submitted && f?.channelName?.errors " class="form-text text-danger ">
+                        <div *ngIf="f.channelName.errors?.required ">Channel Name is required!</div>
+                        <div *ngIf="f.channelName.errors?.minlength ">Channel Name must be at least 6 character is required!</div>
+                        <div *ngIf="f.channelName.errors?.maxlength ">Channel Name must be max 20 character is required!</div>
+                    </div>
+                </div>
+                <div class="form-group ">
+                    <label>Quality Name</label>
+                    <input type="text " formControlName="channelName " class="form-control form-control-lg " placeholder="Enter Quality Name " [ngClass]="{ 'is-invalid': submitted && f.channelName.errors } ">
+                    <div *ngIf="submitted && f?.channelName?.errors " class="form-text text-danger ">
+                        <div *ngIf="f.channelName.errors?.required ">Channel Name is required!</div>
+                        <div *ngIf="f.channelName.errors?.minlength ">Channel Name must be at least 6 character is required!</div>
+                        <div *ngIf="f.channelName.errors?.maxlength ">Channel Name must be max 20 character is required!</div>
+                    </div>
+                </div>
+                <div class="form-group ">
+                    <label>Quality</label>
+                    <div class="input-group mb-3 ">
+                        <input type="number " class="form-control form-control-lg " placeholder="enter ">
+                        <div class="input-group-prepend ">
+                            <button type="button " class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split " data-toggle="dropdown " aria-haspopup="true " aria-expanded="false ">
+                        <span class="sr-only ">Toggle Dropdown</span>
+                      </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group ">
+                    <label>Video Bitrate</label>
+                    <div class="input-group mb-3 ">
+                        <input type="number " class="form-control form-control-lg " placeholder="enter ">
+                        <div class="input-group-prepend ">
+                            <button type="button " class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split " data-toggle="dropdown " aria-haspopup="true " aria-expanded="false ">
+                        <span class="sr-only ">Toggle Dropdown</span>
+                      </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group ">
+                    <label>Audio Bitrate</label>
+                    <div class="input-group mb-3 ">
+                        <input type="number " class="form-control form-control-lg " placeholder="enter ">
+                        <div class="input-group-prepend ">
+                            <button type="button " class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split " data-toggle="dropdown " aria-haspopup="true " aria-expanded="false ">
+                        <span class="sr-only ">Toggle Dropdown</span>
+                      </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group ">
+                    <label>Bandwitdh</label>
+                    <input type="number " formControlName="channelName " class="form-control form-control-lg " placeholder="Bandwitdh " [ngClass]="{ 'is-invalid': submitted && f.channelName.errors } ">
+                    <div *ngIf="submitted && f?.channelName?.errors " class="form-text text-danger ">
+                        <div *ngIf="f.channelName.errors?.required ">Channel Name is required!</div>
+                        <div *ngIf="f.channelName.errors?.minlength ">Channel Name must be at least 6 character is required!</div>
+                        <div *ngIf="f.channelName.errors?.maxlength ">Channel Name must be max 20 character is required!</div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+    <div class="button">
+        <button type="button " (click)="onSavePreset() " style="color: white;text-align:center " class="buton ">Save</button>
+        <button type="button " (click)="c( 'Close click') " style="color: white;text-align:center " class="buton ">Close</button>
+    </div>
+</ng-template>
+<ng-template #updatePreset let-c="close " let-d="dismiss ">
+    <h4>Update Preset</h4>
+    <!-- <form [formGroup]="PresetDetailsForm "> -->
+    <div class="main">
+        <form>
+            <div class="form-group ">
+                <label><b>Preset Name</b></label>
+                <input type="text " formControlName="channelName " class="  form-control form-control-lg " placeholder="Enter Preset Name " [ngClass]="{ 'is-invalid': submitted && f.channelName.errors } ">
+                <div *ngIf="submitted && f?.channelName?.errors " class="form-text text-danger ">
+                    <div *ngIf="f.channelName.errors?.required ">Channel Name is required!</div>
+                    <div *ngIf="f.channelName.errors?.minlength ">Channel Name must be at least 6 character is required!</div>
+                    <div *ngIf="f.channelName.errors?.maxlength ">Channel Name must be max 20 character is required!</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label><b>Quality Name</b></label>
+                <input type="text " formControlName="channelName " class="form-control form-control-lg " placeholder="Enter Quality Name " [ngClass]="{ 'is-invalid': submitted && f.channelName.errors } ">
+                <div *ngIf="submitted && f?.channelName?.errors " class="form-text text-danger ">
+                    <div *ngIf="f.channelName.errors?.required ">Channel Name is required!</div>
+                    <div *ngIf="f.channelName.errors?.minlength ">Channel Name must be at least 6 character is required!</div>
+                    <div *ngIf="f.channelName.errors?.maxlength ">Channel Name must be max 20 character is required!</div>
+                </div>
+            </div>
+            <div class="form-group ">
+                <label><b>Quality</b></label>
+                <div class="input-group mb-3 ">
+                    <input type="number " class="form-control form-control-lg " placeholder="enter ">
+                    <div class="input-group-prepend ">
+                        <button type="button " class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split " data-toggle="dropdown " aria-haspopup="true " aria-expanded="false ">
+    <span class="sr-only ">Toggle Dropdown</span>
+    </button>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group ">
+                <label><b>Video Bitrate</b></label>
+                <div class="input-group mb-3 ">
+                    <input type="number " class="form-control form-control-lg " placeholder="enter ">
+                    <div class="input-group-prepend ">
+                        <button type="button " class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split " data-toggle="dropdown " aria-haspopup="true " aria-expanded="false ">
+    <span class="sr-only ">Toggle Dropdown</span>
+    </button>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group ">
+                <label><b>Audio Bitrate</b></label>
+                <div class="input-group mb-3 ">
+                    <input type="number " class="form-control form-control-lg " placeholder="enter ">
+                    <div class="input-group-prepend ">
+                        <button type="button " class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split " data-toggle="dropdown " aria-haspopup="true " aria-expanded="false ">
+               <span class="sr-only ">Toggle Dropdown</span>
+                </button>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group ">
+                <label><b>Bandwitdh</b></label>
+                <input type="number " formControlName="channelName " class="form-control form-control-lg " placeholder="Bandwitdh " [ngClass]="{ 'is-invalid': submitted && f.channelName.errors } ">
+                <div *ngIf="submitted && f?.channelName?.errors " class="form-text text-danger ">
+                    <div *ngIf="f.channelName.errors?.required ">Channel Name is required!</div>
+                    <div *ngIf="f.channelName.errors?.minlength ">Channel Name must be at least 6 character is required!</div>
+                    <div *ngIf="f.channelName.errors?.maxlength ">Channel Name must be max 20 character is required!</div>
+                </div>
+            </div>
+            <div class="button">
+                <button (click)="onUpdatePreset() " style="color: white;text-align:center " class="buton ">Update</button>
+                <button type="button " (click)="c( 'Close click') " style="color: white;text-align:center " class="buton ">Close</button>
+            </div>
+        </form>
+    </div>
+</ng-template>

@@ -1,0 +1,88 @@
+.buton {
+    width: 130px;
+    align-items: center;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: #d33317;
+    margin-bottom: 15px;
+    /* margin-left: 25px; */
+}
+
+.row {
+    width: 100%;
+    /* margin: 5px; */
+    /* margin-top: 20px; */
+    position: relative;
+}
+
+.buton1 {
+    width: 130px;
+    align-items: center;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(194, 114, 82);
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.fas {
+    margin: 2px;
+    color: #f85e42;
+    border-radius: 50%;
+    border: 0px;
+    border: 0;
+    width: 35px;
+    height: 35px;
+    padding: 0;
+    min-width: 0;
+    background-color: #f18d6511;
+    cursor: pointer;
+    display: inline-flex;
+    outline: 0;
+    align-items: center;
+    justify-content: center;
+}
+.icons{
+    display: flex;
+}
+.select-channel {
+    color: #f85e42;
+    font-weight: bold;
+    font-size: large;
+}
+.close{
+    margin-top: -5%;
+    margin-left: 75%;
+}
+.mainn h4{
+    margin-left: 24%;
+    margin-top: 2%;
+}
+.mainn{
+    width: 96%;
+    height: 80%;
+}
+.mainn h4{
+    margin-left: 31%;
+}
+
+.mainn p{
+    padding: 40px 90px;
+    width: 80%;
+    margin-left: 12%;
+    align-items: center;
+    font-size: 17px;
+    font-weight: 400;
+    opacity: .4;
+}
+.mainn span{
+    margin-left: 25%;
+}
+.form-group{
+    padding: 0px 40px;
+}
+.buton{
+    margin-left: 80%;
+}

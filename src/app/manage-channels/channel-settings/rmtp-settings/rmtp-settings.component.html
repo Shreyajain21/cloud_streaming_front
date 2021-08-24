@@ -1,0 +1,63 @@
+<form [formGroup]="rtmpSettingsForm">
+    <div class="form-group">
+        <label class="mt-2">Meta</label>
+        <select class="form-select form-control form-control-lg" aria-label="Default select example">
+            <option selected>ON</option>
+            <option value="1">Twitch</option>
+            <option value="2">Tele2</option>
+            <option value="3">Never TV</option>
+            <option value="3">Vaughn Live</option>
+          </select>
+    </div>
+    <div class="form-group">
+        <label class="pr-4">Interleave</label>
+        <ui-switch size='small' [checked]="interleave"></ui-switch>
+    </div>
+    <div class="form-group">
+        <label class="pr-4">Wait Key</label>
+        <ui-switch size='small' [checked]="waitKey"></ui-switch>
+    </div>
+    <div class="form-group">
+        <label class="pr-4">Wait Video</label>
+        <ui-switch size='small' [checked]="waitVideo"></ui-switch>
+    </div>
+    <div class="form-group">
+        <label class="pr-4">Publish Notify</label>
+        <ui-switch size='small' [checked]="publishNotify"></ui-switch>
+    </div>
+    <div class="form-group">
+        <label>Sync</label>
+        <input type="number" formControlName="sync" class="form-control form-control-lg" placeholder="" [ngClass]="{ 'is-invalid': submitted && f.sync.errors }">
+        <div *ngIf="submitted && f.sync.errors" class="form-text text-danger">
+            <div *ngIf="f.sync.errors?.required">Sync is required!</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="pr-4">Play Restart</label>
+        <ui-switch size='small' [checked]="playRestart"></ui-switch>
+    </div>
+    <div class="form-group">
+        <label class="pr-4">Idle Streams</label>
+        <ui-switch size='small' [checked]="idleStreams"></ui-switch>
+    </div>
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-4">
+                <label class="pr-4">Drop Idle Publisher</label>
+                <ui-switch size='small' [checked]="dropIdle"></ui-switch>
+            </div>
+            <div class="col-md-4">
+                <div *ngIf="false">
+                    <input type="number" class="form-control form-control-lg" formControlName="playerCountDown" placeholder="" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="pr-4">Enable/Disable Channel</label>
+        <ui-switch size='small' [checked]="enableDisable"></ui-switch>
+    </div>
+    <div class="form-group">
+        <button (click)="onRtmpSetting()" style="color: white;text-align:center" class=" mr-4 buton">Save</button>
+    </div>
+</form>

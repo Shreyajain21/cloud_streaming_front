@@ -1,0 +1,304 @@
+.buton {
+    width: 130px;
+    align-items: center;
+    padding: 5px;
+    margin-left: 22%;
+    border: none;
+    border-radius: 5px;
+    background-color: #d33317;
+    margin-bottom: 15px;
+    /* margin-left: 25px; */
+}
+.btu{
+    display: flex;
+}
+
+.back {
+    width: 112%;
+    height: 100vh;
+    overflow: hidden;
+    position: fixed;
+    background-color: rgb(253, 253, 253);
+}
+
+.list-group-item {
+    background-color: orangered;
+    padding: 10px 15px;
+    margin: 10px;
+    border: none;
+    border-radius: 3px;
+
+}
+
+/*.btn-group a {
+    color: white;
+}*/
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 25px;
+    margin-left: 10px;
+}
+
+.fa {
+    padding: 0px 12px;
+}
+
+.left .list-group-item {
+    display: flex;
+    margin-top: 27px;
+    width: 44%;
+    margin-left: 5%;
+    height: 125px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 0 5px 5px rgb(219, 219, 219);
+}
+
+.list-group-item img {
+    width: 15vh;
+    height: 10vh;
+    border-radius: 5px;
+}
+.list-group-item div {
+    margin-top: 20px;
+    margin-right: 27%;
+}
+.text-muted .fa {
+    background-color: antiquewhite;
+    margin-top: 18px;
+    font-size: 23px;
+    padding: 13px 22px;
+    border-radius: 50px;
+    color: orangered;
+}
+
+.right {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 80%;
+    left: 85%;
+    width: 50%;
+    height: 92%;
+}
+
+.right .list-group-item {
+    width: 85%;
+    height: 18%;
+    box-shadow: 0 0 5px 5px rgb(219, 219, 219);
+}
+
+.line {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 53%;
+    top: 70%;
+    width: 0.5px;
+    height: 115%;
+    background-color: rgb(170, 170, 170);
+}
+
+.right .list-group-item div {
+    margin-top: 20px;
+    margin-right: 38%;
+}
+
+.right .list-group-item {
+    background-color: white;
+}
+.first{
+    width: 98%;
+    height: 90%;
+    background-color: red;
+}
+.inright{
+    position: absolute;
+    left: 83%;
+    border-radius: 50px;
+    margin-top: 30px;
+    width: 52px;
+    height: 50px;
+    background-color: antiquewhite;
+}
+.inright .fa{
+    margin-top: 13px;
+    font-size: 24px;
+    margin-left: 12px;
+    color: red;
+}
+.back{
+    position: absolute;
+    align-items: center;
+    justify-content: space-around;
+    top: 20%;
+    width: 300%;
+    font-size: 13px;
+    cursor: pointer;
+    height: 180%;
+    background-color: rgb(253, 253, 253);
+}
+
+.inter p{
+    margin-right: 60px;
+    font-weight: 500;
+}
+.inter{
+    position: relative;
+    margin-left: 20px;
+    margin-top: 2px;
+    justify-content: space-between;
+}
+.inter .fas:hover{
+    color: orangered;
+    margin: -1px;
+    transition: 0.3s ease;  
+}
+.inter .fas:ho{
+    margin: -1px;
+}
+.fas:hover{
+    color: orangered;
+}
+hr{
+    margin-top: 7px;
+}
+.edit{
+    width: 98%;
+    height: 99%;
+    background-color: red;
+}
+.close{
+    margin-top: -57px;
+    margin-left: 90%;
+}
+.pra p{
+    padding: 40px 90px;
+    width: 80%;
+    margin-left: 12%;
+    align-items: center;
+    font-size: 17px;
+    font-weight: 400;
+    opacity: .4;
+}
+.pra span{
+    margin-left: 25%;
+}
+.inp{
+    padding: 0px 40px;
+}
+.but {
+    padding: 0px 50px;
+}
+.pr{
+    position: absolute;
+    margin-left: 17%;
+    margin-top: 110px;
+    opacity: .5;
+}
+.inputin{
+    margin-top: 13%;
+    padding: 0px 80px;
+}
+.done{
+    margin-left: 73%;
+}
+.copy{
+    padding: 6px 19px;
+    color: orangered;
+    border: 1px solid orangered;
+}
+.send{
+    padding: 6px 25px;
+    color: rgb(66, 53, 49);
+    border: 1px solid orangered; 
+}
+.fil{
+    width: 80%;
+    margin-left: 7%;
+    padding: 5px 10px;
+    box-shadow: 1px 1px 1px 1px rgb(167, 167, 167);
+    background-color: rgb(243, 243, 243);
+}
+.form-check{
+    margin-left: 8%;
+}
+.delete{
+    display: flex;
+}
+@media only screen and (max-width: 750px) {
+    .left .list-group-item {
+        width: 78%;
+        height: 95px;
+        left: 7%;
+    }
+    .list-group-item div {
+        margin-top: 5px;
+        margin-left: 5%;
+        font-size: 15px;
+    }
+    .list-group-item img {
+        border-radius: 5px;
+    }
+    .left text-muted {
+        font-size: 10px;
+    }
+    .list-group-item img {
+        margin-top: 6px;
+        /*width: 9vh;
+        height: 9vh;*/
+        width: 120%;
+        height: 100%;
+    }
+    .line {
+        top: 105%;
+        width: 100%;
+        height: 0.5px;
+    }
+    .right .list-group-item div {
+        margin-top: 12px;
+        margin-right: 34%;
+    }
+    .right {
+        top: 150%;
+        left: 52%;
+        width: 90%;
+        height: 80%;
+    }
+    .inright{
+        margin-top: 20px;
+        margin-left: -10px;
+    }
+    .inright .fa{
+        margin-top: 13px;
+        font-size: 24px;
+        margin-left: 12px;
+        color: red;
+    }
+    .text-muted{
+        margin-left: 3px;
+        font-size: 10px;
+    }
+}
+.Title{
+    padding: 10px 40px;
+}
+.date{
+    padding: 0px 40px;
+}
+.Details{
+    padding: 0px 40px;
+}
+.small h3{
+    margin-left: 8%;
+    font-size: 16px;
+}
+.small img{
+    margin-left: 8%;
+    width: 25%;
+    height: 13vh;
+    border-radius: 5px;
+    border: 0.5px solid black;
+}
+.cnv button {
+    width: 22%;
+    margin-left: 72%;
+}

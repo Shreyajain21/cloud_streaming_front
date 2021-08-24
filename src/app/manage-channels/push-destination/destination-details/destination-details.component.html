@@ -1,0 +1,84 @@
+<div style="background-color: rgb(248, 252, 245);">
+    <h5 class="ml-5 mt-4">Destination Details</h5>
+    <section>
+        <div class="row">
+            <div class="card">
+                <ul class="list-group list-group-flush ">
+                    <li class="list-group-item">
+                        <div>
+                            <span><h5 class="card-title ml-5 mt-4">Twitch</h5></span>
+                            <span class=" list-align-right">
+                                <button class="buton mt-0" [routerLink]="['addChannel']">
+                                     Push</button>
+                                </span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="card">
+                <form [formGroup]="DestinationDetailForm">
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col">
+                                <label><b>Server</b></label>
+                                <input type="text" formControlName="channelName" class="form-control form-control-lg" placeholder="Twitch" [ngClass]="{ 'is-invalid': submitted && f.channelName.errors }">
+                                <div *ngIf="submitted && f?.channelName?.errors" class="form-text text-danger">
+                                    <div *ngIf="f.channelName.errors?.required">Channel Name is required!</div>
+                                    <div *ngIf="f.channelName.errors?.minlength">Channel Name must be at least 6 character is required!</div>
+                                    <div *ngIf="f.channelName.errors?.maxlength">Channel Name must be max 20 character is required!</div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <label><b>Video Link</b></label><br>
+                                <input type="text" formControlName="channelLogo" class="form-control form-control-lg" placeholder="Stream Name" [ngClass]="{'is-invalid': submitted && f.streamName.errors }">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col">
+                                <label><b>Stream Key</b></label>
+                                <input type="text" formControlName="streamName" class="form-control form-control-lg" placeholder="Stream Name" [ngClass]="{'is-invalid': submitted && f.streamName.errors }">
+                                <div *ngIf="submitted && f?.streamName?.errors" class="form-text text-danger">
+                                    <div *ngIf="f.streamName.errors?.required">Stream Name is required!</div>
+                                    <div *ngIf="f.streamName.errors?.minlength">Stream Name must be at least 6 character is required!</div>
+                                    <div *ngIf="f.streamName.errors?.maxlength">Stream Name must be max 20 character is required!</div>
+                                </div>
+                            </div>
+
+                            <div class="col">
+                                <label><b>RTMP URL</b></label>
+                                <input type="password" formControlName="password" class="form-control form-control-lg" placeholder="********" [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
+                                <div *ngIf="submitted && f.password.errors" class="form-text text-danger">
+                                    <div *ngIf="f.password.errors?.required">Password is required!</div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="form-group">
+                        <div class="row">
+                            <!-- <ul class="list-group list-group-flush ">
+                                    <li class="list-group-item"> -->
+                            <div class="col">
+                                <label>About</label>
+                                <div class="cecard1">
+                                    <i id="pr" class="ri-play-circle-line"></i>
+                                    <h3>Preview</h3>
+                                    <i id="pw" class="ri-play-circle-fill"></i>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <p>Animals (also called Metazoa) are multicellular eukaryotic organisms that form the biological kingdom Animalia. With few exceptions, animals consume organic material, breathe oxygen, are able to move, can reproduce sexually,
+                                    and grow from a hollow sphere of cells, the blastula, during embryonic development.</p>
+                            </div>
+                            <!-- </li>
+                                </ul> -->
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+</div>

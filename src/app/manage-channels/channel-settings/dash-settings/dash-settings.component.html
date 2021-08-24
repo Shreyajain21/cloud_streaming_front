@@ -1,0 +1,39 @@
+<form>
+    <div class="form-group">
+        <label class="pr-4">Dash</label>
+        <ui-switch size='small' [checked]="dash"></ui-switch>
+    </div>
+
+    <div class="form-group">
+        <label>Dash Fragment</label>
+        <select class="custom-select" aria-label="Default select example">
+            <option selected>12s</option>
+            <option value="1">Twitch</option>
+            <option value="2">Tele2</option>
+            <option value="3">Never TV</option>
+            <option value="3">Vaughn Live</option>
+          </select>
+    </div>
+    <div class="form-group">
+        <label>Dash Playlist Length</label>
+        <select class="custom-select" aria-label="Default select example">
+            <option selected>28s</option>
+            <option value="1">Twitch</option>
+            <option value="2">Tele2</option>
+            <option value="3">Never TV</option>
+            <option value="3">Vaughn Live</option>
+          </select>
+    </div>
+    <div class="form-group">
+        <label class="pr-4">Dash Nested</label>
+        <ui-switch size='small' [checked]="dashNested"></ui-switch>
+    </div>
+    <div class="form-group">
+        <label class="pr-4">Dash Cleanup</label>
+        <ui-switch size='small' [checked]="dashCleanup"></ui-switch>
+    </div>
+
+    <div class="form-group">
+        <button (click)="onHlsSetting()" style="color: white;text-align:center" class=" mr-4 buton">Save</button>
+    </div>
+</form>

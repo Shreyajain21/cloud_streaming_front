@@ -1,0 +1,63 @@
+.buton {
+    width: 130px;
+    align-items: center;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: #d33317;
+    margin-bottom: 15px;
+    /* margin-left: 25px; */
+}
+
+.row {
+    width: 100%;
+    /* margin: 5px; */
+    /* margin-top: 20px; */
+    position: relative;
+}
+
+.buton1 {
+    width: 130px;
+    align-items: center;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(194, 114, 82);
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.fas {
+    margin: 2px;
+    color: #f85e42;
+    border-radius: 50%;
+    border: 0px;
+    border: 0;
+    width: 35px;
+    height: 35px;
+    padding: 0;
+    min-width: 0;
+    background-color: #f18d6511;
+    cursor: pointer;
+    display: inline-flex;
+    outline: 0;
+    align-items: center;
+    justify-content: center;
+}
+
+.select-channel {
+    color: #f85e42;
+    font-weight: bold;
+    font-size: large;
+}
+.main{
+    width: 90%;
+    height: 90%;
+    padding: 20px;
+    margin-left: 5%; 
+}
+.button{
+    display: flex;
+    margin-left: 10%;
+    justify-content: space-around;
+}

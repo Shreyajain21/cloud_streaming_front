@@ -1,0 +1,23 @@
+.buton {
+    width: 130px;
+    align-items: center;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: #d33317;
+    margin-bottom: 15px;
+    /* margin-left: 25px; */
+}
+.rec{
+    font-weight: 700;
+}
+.form-group h5{
+    font-size: 16px;
+    display: flex;
+    font-weight: 500;
+    margin-top: 20px;
+}
+.form-group p{
+    opacity: .4;
+    margin-left: 40px;
+}

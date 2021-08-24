@@ -1,0 +1,102 @@
+.back{
+    margin-left: 3%;
+}
+.bg {
+    margin-left: 2%;
+    margin-top: 5px;
+    background-color: rgb(255, 255, 255)
+}
+
+.shbox {
+    box-shadow: 0px 1px 3px 0px #e0dddd;
+    padding: 16px;
+    border-radius: 8px;
+    border: 2px;
+    margin-left: 30px;
+    width: 380px;
+    height: 240px;
+    margin-top: 64px;
+    background-color: white
+}
+
+.card {
+    background-color: hsl(40, 7%, 92%);
+}
+
+.shbox .fa {
+    margin-left: 140px;
+    font-size: 30px;
+}
+
+.facebook .fa {
+    padding: 12px 20px;
+    border-radius: 50px;
+    color: white;
+    background-color: rgb(6, 0, 95);
+}
+
+.text {
+    margin-left: 132px;
+    margin-top: 8px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+button {
+    margin-left: 85px;
+    margin-top: 19%;
+    border: none;
+    padding: 10px 25px;
+    font-size: 17px;
+    font-weight: 500;
+    border-radius: 5px;
+    color: white;
+}
+
+.facebook button {
+    background-color: rgb(6, 0, 95);
+}
+
+.Twitter .fa {
+    padding: 13px 15px;
+    border-radius: 50px;
+    color: white;
+    background-color: rgb(0, 188, 206);
+}
+
+.Twitter button {
+    background-color: rgb(0, 188, 206);
+}
+
+.Linkedin .fa {
+    padding: 13px 15px;
+    border-radius: 50px;
+    color: white;
+    background-color: rgb(1, 149, 207);
+}
+
+.Linkedin button {
+    background-color: rgb(1, 149, 207);
+}
+
+.google .fa {
+    padding: 16px 13px;
+    border-radius: 50px;
+    color: white;
+    background-color: orangered;
+}
+
+.google button {
+    background-color: orangered;
+}
+
+.tumblr .fa {
+    padding: 13px 20px;
+    border-radius: 50px;
+    color: white;
+    background-color: rgb(0, 100, 109);
+}
+
+.tumblr button {
+    background-color: rgb(0, 100, 109);
+}

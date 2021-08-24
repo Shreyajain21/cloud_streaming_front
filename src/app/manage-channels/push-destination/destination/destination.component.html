@@ -1,0 +1,73 @@
+<section>
+    <div class="row">
+        <div class="card">
+            <ul class="list-group list-group-flush ">
+                <li class="list-group-item">
+                    <div class="row">
+                        <div class="col-md-10">
+                            <h5 class="card-title mb-4 mt-3">Destinations</h5>
+                        </div>
+                        <div class="col-md-2">
+                            <button routerLink="/manage-channel/push-destination" class="mr-4 buton">
+                                       <i class="fas fa-plus"> Push Destination</i> 
+                            </button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label class="col-md-2 mt-2 select-channel">Select Channel</label>
+                        <div class="col-md-4 mb-2">
+                            <select class="form-select" aria-label="Default select example">
+                                <option selected>Default</option>
+                                <option value="1">Twitch</option>
+                                <option value="2">Tele2</option>
+                                <option value="3">Never TV</option>
+                                <option value="3">Vaughn Live</option>
+                              </select>
+                        </div>
+                        <div class="col-md-3"></div>
+                        <div class="col-md-3">
+                            <select class="form-select" aria-label="Default select example">
+                                    <option selected>Bulk Operations</option>
+                                    <option value="1">Turn Off All</option>
+                                    <option value="2">Turn On All</option>
+                                    <option value="3">Remove All</option>
+                                  </select>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <div class="card-body">
+                <div class="row">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <!-- <span class="col-md-3">{{channel?.channelLogo}}</span>
+                            <span>{{channel?.channelName}}</span> -->
+
+                            <!-- <span class="col-sm-3 badge badge-primary" 
+                            [ngStyle]="{'color':getColor(channel.channelStatus)}">{{channel.channelStatus}}</span> -->
+                            <!-- <span class="col-md-3 badge" [ngClass]="{
+            'badge-danger':channel?.channelStatus=== 'Unpublished',          
+            'badge-success':channel?.channelStatus === 'Published'}">{{channel?.channelStatus}}</span>
+                            <span> -->
+                            <span></span>
+                            <span></span>
+                            <span><ui-switch size='small' [checked]="destination"></ui-switch></span>
+                            <span><i class="remove fas fa-trash" (click)="openDeleteDest(removeDest)"></i></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<ng-template class="main" #removeDest let-c="close" let-d="dismiss">
+    <h5 class="card-title text-center mb-4 mt-3">Remove Destination</h5>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+        <span class="cls"> <i class="fa fa-times" aria-hidden="true"></i> </span>
+      </button>
+    <p class="but">Are you sure to remove destination Twitch?</p>
+    <div class="but">
+        <button type="button" (click)="c('Close click')" style="color: white;text-align:center" class="buton">Cancel</button>
+        <button  (click)="onRemoveDest()" style="color: white;text-align:center" class="remov buton">Remove</button>
+    </div>
+</ng-template>

@@ -1,0 +1,25 @@
+<nav class="navbar navbar-light bg-white">
+    <div class="container-fluid">
+        <a class="navbar-brand ">Upload Videos</a>
+        <a class="btn btn-orange button dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fas fa-video"></i> New Video
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <li><a class="dropdown-item" routerLink="/">Upload</a></li>
+            <hr>
+            <li><a class="dropdown-item" routerLink="/">Recordings</a></li>
+        </ul>
+    </div>
+</nav>
+<div class="main ">
+    <div class="card-body">
+        <form [formGroup="uploadImageDetailsForm"]>
+        <h5><i class="fa fa-cloud-upload"></i></h5>
+        <h6 class="card-subtitle  text-bolde">Drag and drop videos to upload</h6>
+        <label for="upload-photo"><div class="color-btn-browser"> Or Choose Files</div></label><br>
+        <input type="file" (change)="uploadFile($event)" class="form-control" placeholder="Enter Logo" name="photo" id="upload-photo" />
+    </form>
+        <!-- <button>Or Choose Files</button> -->
+    </div>
+</div>
+<div class="message"><i class="fa fa-commenting "></i></div>

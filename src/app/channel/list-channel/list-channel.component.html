@@ -1,0 +1,39 @@
+<section>
+    <div class="">
+        <div class="row">
+            <div class="card">
+                <ul class="list-group list-group-flush ">
+                    <li class="list-group-item">
+                        <div>
+                            <span><h5 class="card-title ml-5 mt-4">Channel</h5></span>
+                            <span class=" list-align-right">
+                                <button class="btn-color mt-0" [routerLink]="['/channel/createChannel']">
+                                     <i class="fas fa-plus">Add Channel</i></button>
+             </span>
+                        </div>
+                    </li>
+                </ul>
+
+                <div class="card-body">
+                    <div class="row">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item" *ngFor="let channel of channelDetails; let i=index">
+                                <span class="col-md-3">{{channel?.channelLogo}}</span>
+                                <span>{{channel?.channelName}}</span>
+
+                                <!-- <span class="col-sm-3 badge badge-primary" 
+                                [ngStyle]="{'color':getColor(channel.channelStatus)}">{{channel.channelStatus}}</span> -->
+                                <!-- <span class="col-md-3 badge" [ngClass]="{
+                'badge-danger':channel?.channelStatus=== 'Unpublished',          
+                'badge-success':channel?.channelStatus === 'Published'}">{{channel?.channelStatus}}</span>-->
+                                <span> 
+                                <button class="col-md-3">Manage Channel</button>
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

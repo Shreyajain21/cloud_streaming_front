@@ -1,0 +1,13 @@
+.buton {
+    width: 130px;
+    align-items: center;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: #d33317;
+    margin-bottom: 15px;
+    /* margin-left: 25px; */
+}
+.back{
+    margin-left: 3%;
+}

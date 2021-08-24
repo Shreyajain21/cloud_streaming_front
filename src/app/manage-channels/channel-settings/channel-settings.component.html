@@ -1,0 +1,53 @@
+<app-topbar [header]="header"></app-topbar>
+
+<section>
+    <div class="">
+        <div class="row">
+            <div class="card">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+
+                        <div class="active cardheader" (click)="settingsName = 'RTMP_Settings'">
+                            RTMP Settings
+                        </div>
+                        <div class="cardheader" (click)="settingsName ='HLS_Settings'">
+                            HLS Settings
+                        </div>
+                        <div class="cardheader" (click)="settingsName ='Dash_Settings'">
+                            Dash Settings
+                        </div>
+                        <div class="cardheader" (click)="settingsName ='Restrictions'">
+                            Restrictions
+                        </div>
+                        <div class="cardheader" (click)="settingsName ='Player_Settings'">
+                            Player Settings
+                        </div>
+                        <div class="cardheader" (click)="settingsName ='Create_Player'">
+                            Create Player
+                        </div>
+                    </li>
+                </ul>
+                <div class="card-body">
+                    <div *ngIf="settingsName === 'RTMP_Settings'">
+                        <app-rmtp-settings></app-rmtp-settings>
+                    </div>
+                    <div *ngIf="settingsName === 'HLS_Settings'">
+                        <app-hls-settings></app-hls-settings>
+                    </div>
+                    <div *ngIf="settingsName === 'Dash_Settings'">
+                        <app-dash-settings></app-dash-settings>
+                    </div>
+                    <div *ngIf="settingsName === 'Restrictions'">
+                        <app-restrictions></app-restrictions>
+                    </div>
+                    <div *ngIf="settingsName === 'Player_Settings'">
+                        <app-player-settings></app-player-settings>
+                    </div>
+                    <div *ngIf="settingsName === 'Create_Player'">
+                        <app-create-player></app-create-player>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

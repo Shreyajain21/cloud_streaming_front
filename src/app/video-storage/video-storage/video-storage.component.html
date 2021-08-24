@@ -1,0 +1,91 @@
+<!-----<nav class="navbar navbar-light bg-white">
+    <div class="container-fluid">
+        <a class="navbar-brand ">Video Storage</a>
+        <div class="list-group list-group-flush">
+            <div (click)="expands=!expands" class="button">
+                <i class="fas fa-video"> New Video</i>
+                <span class="float-right"><i class="fa fa-caret-right"></i></span></div>
+            <div *ngIf="expands">
+                <a class="list-group-item list-group-item-action" routerLink="/video-storage/uploadVideo"><i class="fa fa-upload">Upload</i></a>
+            </div>
+            <div *ngIf="expands">
+                <a class="list-group-item list-group-item-action" routerLink="/video-storage/vdoRecordings"><i class="fa fa-dot-circle-o">Recordings</i></a>
+            </div>
+        </div>
+    </div>
+</nav>--->
+
+<nav class="navbar navbar-light">
+    <a class="navbar-brand">Video Storage</a> 
+    <div class="list-group list-group-flush">
+        <div (click)="expands=!expands" class="button">
+            <i class="fas fa-video"> New Video</i>
+            <span class="float-right"><i class="fa fa-caret-right"></i></span></div>
+        <div *ngIf="expands">
+            <a class="list-group-item list-group-item-action" routerLink="/video-storage/uploadVideo"><i class="fa fa-upload">Upload</i></a>
+        </div>
+        <div *ngIf="expands">
+            <a class="list-group-item list-group-item-action" routerLink="/video-storage/vdoRecordings"><i class="fa fa-dot-circle-o">Recordings</i></a>
+        </div>
+    </div>
+</nav>
+<div class="center">
+    <div class="card-body">
+        <h5><i class="fa fa-cloud-upload"></i></h5>
+        <h6 class="card-subtitle  text-bolde">Videos</h6>
+        <p class="text">This is where you can manage your videos, and access <br><span>essential tools and settings.</span></p>
+    </div>
+</div>
+<div class="message">
+    <i class="fa fa-commenting-o"></i>
+</div>
+<!--  -->
+<!-- <nav class="navbar navbar-expand-lg navbar-light bg-white">
+    <div class="container-md">
+        <a class="navbar-brand " href="#">Publish Sample Videos Dummy Videos For Demo Use.mp4 <i class="fa fa-times-circle"></i>  </a>
+    </div>
+</nav>
+<div class="card-group">
+    <div class="card">
+        <img src="assets/two.jpg" class="card-img-top" alt="...">
+        <a class=" center d-flex justify-content-between ">
+            <div>
+                <h6 class="my-0.2">Facebook</h6>
+                <small class="text-muted">Not Connected</small>
+            </div>
+            <span class="text-muted"><i class="fa fa-facebook"></i></span>
+        </a>
+        <a class=" center d-flex justify-content-between ">
+            <div>
+                <h6 class="my-0.2">Twitter</h6>
+                <small class="text-muted">Not Connected</small>
+            </div>
+            <span class="text-muted"><i class="fa fa-twitter text-info"></i></span>
+        </a>
+        <a class=" center d-flex justify-content-between ">
+            <div>
+                <h6 class="my-0.2">LinkedIn</h6>
+                <small class="text-muted">Not Connected</small>
+            </div>
+            <span class="text-muted"><i class="fa fa-linkedin text-primary" ></i></span>
+        </a>
+        <a class=" center d-flex justify-content-between ">
+            <div>
+                <h6 class="my-0.2">Tumblr</h6>
+                <small class="text-muted">Not Connected</small>
+            </div>
+            <span class="text-muted "><i class="fa fa-tumblr text-dark" ></i></span>
+        </a>
+    </div>
+    <div class="line"></div>
+    <div class="card">
+        <div class="right">
+            <i class="fa fa-linkedin text-primary"></i>
+            <h3>Connect to LinkedIn</h3>
+            <p>Allow IdStream to publish to
+                <span> my LinkedIn account</span>
+            </p>
+            <button>Connect</button>
+        </div>
+    </div>
+</div> -->

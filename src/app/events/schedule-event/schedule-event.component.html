@@ -1,0 +1,107 @@
+<div class="container-fluid">
+    <a class="navbar-brand">Events</a>
+</div>
+<div class="text-center">
+    <div class="header">
+        <img src="assets/event.png" alt="">
+    </div>
+    <div class="card-body">
+        <h4 class="card-title">Schedule An Event</h4>
+        <p class="card-text">Let your audience know when you plan to go live.</p>
+        <button class="btu" (click)="openinfo(chooseEventType)"><i class="fa fa-plus-circle"></i>Schedule Live Event</button>
+    </div>
+    <a href="message"><i class="message fa fa-commenting-o"></i></a>
+</div>
+<ng-template #chooseEventType let-c="close" let-d="dismiss">
+    <h5 class="card-title text-center mb-4 mt-3">Choose The Event Type</h5>
+    <button type=" button" class="close" aria-label="Close" (click)="d('Cross click')">
+        <span class="cls"> <i class="fa fa-times" aria-hidden="true"></i> </span>
+      </button>
+    <button  class="alive d-flex" (click)="openinfo(createNewEvent)"><i class="play fa fa-video-camera"></i> <p> Schedule ALive Session <br><span>Use IdStream Studio or OBS, Zoom.</span> </p> <i class="right fa fa-angle-right"></i></button>
+
+    <button  class="alive d-flex" (click)="openinfo(createNewEvent)"><i class="play fa fa-calendar-o"></i> <p> Schedule A Recorded Video <br><span>Stream Your Uploaded Videos or Recordings.</span> </p> <i class="right fa fa-angle-right"></i></button>
+    <!-- <button (click)="openinfo(chooseEventType)"></button> -->
+</ng-template>
+<!------<ng-template #createNewEvent let-c="close" let-d="dismiss">
+    <h5 class="card-title text-center mb-4 mt-3">Create New Event</h5>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+        <span> <i class="fa fa-times" aria-hidden="true"></i> </span>
+      </button>
+    <form [formGroup]="eventDetailsForm">
+        <div class="form-group">
+            <label>Event Title</label>
+            <input type="text" formControlName="eventTitle" class="form-control form-control-lg" placeholder="Full Name" [ngClass]="{'is-invalid': submitted && f.streamName.errors }">
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col">
+                    <label>Date</label>
+                    <input type="date" formControlName="date" class="form-control form-control-lg" placeholder="" [ngClass]="{'is-invalid': submitted && f.date.errors }">
+                    <div *ngIf="submitted && f?.date?.errors" class="form-text text-danger">
+                        <div *ngIf="f.date.errors?.required">Date is required!</div>
+                    </div>
+                </div>
+                <div class="col">
+                    <label>Starts At</label><br>
+                    <input type="text" formControlName="startAt" class="form-control form-control-lg" placeholder="Full Name" [ngClass]="{'is-invalid': submitted && f.streamName.errors }">
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Event Details</label><br>
+            <textarea formControlName="eventDetails" (ngModelChange)="valueChange($event)" [maxlength]="maxChars" class="form-control form-control-lg" placeholder="Event Details"></textarea>
+            <span class="remaning">{{remainingText}}/{{maxChars}}</span>
+        </div>
+        <div class="form-group">
+            <label>Thumbnail</label>
+            <img src="assets/small.jpg" alt="">
+        </div>
+        <div class="form-group">
+            <button (click)="createNewevent()" style="color: white;text-align:center" class="buton">Create New Event</button>
+        </div>
+    </form>
+</ng-template>------->
+
+<ng-template #createNewEvent let-c="close" let-d="dismiss">    
+    <h5 class="card-title text-center mb-4 mt-3">Create New Event</h5>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+        <span> <i class="fa fa-times" aria-hidden="true"></i></span>
+    </button>
+        <form  [formGroup]="eventDetailsForm">
+            <div class="Title form-group">
+                <label>Event Title</label>
+                <input type="text" formControlName="eventTitle" class="form-control form-control-lg" placeholder="Full Name" [ngClass]="{'is-invalid': submitted && f.streamName.errors }">
+            </div>
+            <div class="date form-group ">
+                <div class="row">
+                    <div class="col">
+                        <label>Date</label>
+                        <input type="date" formControlName="date" class="form-control form-control-lg" placeholder="" [ngClass]="{'is-invalid': submitted && f.date.errors }">
+                        <div *ngIf="submitted && f?.date?.errors" class="form-text text-danger">
+                            <div *ngIf="f.date.errors?.required">Date is required!</div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <label>Starts At</label><br>
+                        <input type="text" formControlName="startAt" class="form-control form-control-lg" placeholder="Full Name" [ngClass]="{'is-invalid': submitted && f.streamName.errors }">
+                    </div>
+                </div>
+            </div>
+            <div class="Details form-group">
+                <label>Event Details</label><br>
+                <textarea formControlName="eventDetails" (ngModelChange)="valueChange($event)" [maxlength]="maxChars" class="form-control form-control-lg" placeholder="Event Details"></textarea>
+                <span class="remaning">{{remainingText}}/{{maxChars}}</span>
+            </div>
+            <div class="small form-group">
+                <h3>Thumbnail</h3>
+                <input type="file" id="file" accept="image/*">
+                <label for="file">
+                    <i class="fa fa-plus-circle"></i> Upload Image
+                </label>
+            </div>
+            <div class="cnv form-group">
+                <button (click)="createNewevent()" style="color: white;text-align:center" class="bttu buton">Next</button>
+            </div>
+    </form>
+</ng-template>
+

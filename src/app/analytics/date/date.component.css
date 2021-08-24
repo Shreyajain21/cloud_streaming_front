@@ -1,0 +1,19 @@
+.back{
+    margin-left: 3%;
+}
+.vl {
+    border-left: 1px solid grey;
+    height: 500px;
+    margin-left: 25%;
+}
+
+.alignpart {
+    display: flex;
+}
+table{
+    margin-left: 10%;
+    margin-top: 5%;
+}
+.alignment2 {
+    margin-left: 10px;
+}

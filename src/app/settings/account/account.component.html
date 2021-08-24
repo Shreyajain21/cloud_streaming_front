@@ -1,0 +1,71 @@
+<div class="back">
+    <section>
+        <div class="">
+            <div class="row">
+                <div>
+                    <h5 class="card-title mb-4 mt-3">Account</h5>
+                </div>
+                <form [formGroup]="accountForm">
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col">
+                                <label><b>Email Address</b></label>
+                                <input type="text" formControlName="channelName" class="form-control form-control-lg" placeholder="Email" [ngClass]="{ 'is-invalid': submitted && f.channelName.errors }">
+                                <div *ngIf="submitted && f?.channelName?.errors" class="form-text text-danger">
+                                    <div *ngIf="f.channelName.errors?.required">Channel Name is required!</div>
+                                    <div *ngIf="f.channelName.errors?.minlength">Channel Name must be at least 6 character is required!</div>
+                                    <div *ngIf="f.channelName.errors?.maxlength">Channel Name must be max 20 character is required!</div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <label><b>Full Name</b></label><br>
+                                <input type="text" formControlName="channelLogo" class="form-control form-control-lg" placeholder="Full Name" [ngClass]="{'is-invalid': submitted && f.streamName.errors }">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col">
+                                <label><b>Language</b></label>
+                                <select class="form-select form-control form-control-lg" aria-label="Default select example">
+                        <option selected>English</option>
+                        <option value="1">Hindi</option>
+                        <option value="2">Gujrati</option>
+                        <option value="3">Marathi</option>
+                        <option value="3">Tamil</option>
+                      </select>
+                                <div *ngIf="submitted && f?.streamName?.errors" class="form-text text-danger">
+                                    <div *ngIf="f.streamName.errors?.required">Stream Name is required!</div>
+                                    <div *ngIf="f.streamName.errors?.minlength">Stream Name must be at least 6 character is required!</div>
+                                    <div *ngIf="f.streamName.errors?.maxlength">Stream Name must be max 20 character is required!</div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <label><b>Phone Number</b></label>
+                                <input type="password" formControlName="password" class="form-control form-control-lg" placeholder="6788899997" [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
+                                <div *ngIf="submitted && f.password.errors" class="form-text text-danger">
+                                    <div *ngIf="f.password.errors?.required">Password is required!</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <h6 class="card-title mb-4 mt-3">Linked Accounts</h6>
+                    <p>
+                        We use this to let you sign in and populate your profile information.
+                    </p>
+                    <button type="button">Connect</button>
+                    <hr>
+                    <h6 class="card-title mb-4 mt-3">Delete Account</h6>
+                    <p>
+                        By deleting your account will lose all your data.
+                    </p>
+                    <hr>
+                    <div class="form-group">
+                        <button (click)="onSaveChanges()" style="color: white;text-align:center" class="buton">Save Changes</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+</div>

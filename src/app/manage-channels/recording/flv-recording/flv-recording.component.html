@@ -1,0 +1,102 @@
+<div class="back">
+    <section>
+        <form [formGroup]="FlvRecordingForm">
+            <div class="form-group">
+                <label>Profile</label>
+                <div class="row">
+                    <div class="col-md-10">
+                        <input type="text" formControlName="profile" class="form-control form-control-lg" placeholder="No Profile Exists" [ngClass]="{ 'is-invalid': submitted && f.profile.errors }">
+                        <div *ngIf="submitted && f?.profile?.errors" class="form-text text-danger">
+                            <div *ngIf="f.profile.errors?.required">Profile Name is required!</div>
+                            <!-- <div *ngIf="f.profile.errors?.minlength">Profile Name must be at least 6 character is required!</div>
+                                <div *ngIf="f.profile.errors?.maxlength">Profile Name must be max 20 character is required!</div> -->
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <i class="fas fa-plus" (click)="onAddProfile()"></i>
+                        <i class="fas fa-eye" (click)="onViewProfile()"></i>
+                        <i class="fas fa-trash" (click)="onDeleteProfile()"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Profile Name</label>
+                <input type="text" formControlName="profileName" class="form-control form-control-lg" placeholder="Profile Name" [ngClass]="{ 'is-invalid': submitted && f.profileName.errors }">
+                <div *ngIf="submitted && f?.profileName?.errors" class="form-text text-danger">
+                    <div *ngIf="f.profileName.errors?.required">Profile Name is required!</div>
+                    <!-- <div *ngIf="f.profileName.errors?.minlength">Profile Name must be at least 6 character is required!</div>
+                        <div *ngIf="f.profileName.errors?.maxlength">Profile Name must be max 20 character is required!</div> -->
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="mt-2">Record Mode</label>
+                <select class="form-select form-control form-control-lg" aria-label="Default select example">
+                                        <option selected>All</option>
+                                        <option value="1">Twitch</option>
+                                        <option value="2">Tele2</option>
+                                        <option value="3">Never TV</option>
+                                        <option value="3">Vaughn Live</option>
+                                      </select>
+            </div>
+            <div class="form-group">
+                <label>File Name</label>
+                <input type="text" formControlName="fileName" class="form-control form-control-lg" placeholder="File Name" [ngClass]="{ 'is-invalid': submitted && f.fileName.errors }">
+                <div *ngIf="submitted && f?.fileName?.errors" class="form-text text-danger">
+                    <div *ngIf="f.fileName.errors?.required">Channel Name is required!</div>
+                    <!-- <div *ngIf="f.fileName.errors?.minlength">Channel Name must be at least 6 character is required!</div>
+                        <div *ngIf="f.fileName.errors?.maxlength">Channel Name must be max 20 character is required!</div> -->
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-md-4">
+                        <label class="pr-4">Record Unique</label>
+                        <ui-switch size='small' [checked]="recordUnique"></ui-switch>
+                        <div *ngIf="false">
+                            <input type="date" pattern="dd/mm/yyyy" class="form-control form-control-lg" formControlName="playerCountDown" placeholder="dd-mm-yyyy" />
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="pr-4">Record Append</label>
+                        <ui-switch size='small' [checked]="recordAppend"></ui-switch>
+                        <div *ngIf="false">
+                            <input type="date" pattern="dd/mm/yyyy" class="form-control form-control-lg" formControlName="playerCountDown" placeholder="dd-mm-yyyy" />
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="pr-4">Record Lock</label>
+                        <ui-switch size='small' [checked]="recordLock"></ui-switch>
+                        <div *ngIf="false">
+                            <input type="date" pattern="dd/mm/yyyy" class="form-control form-control-lg" formControlName="playerCountDown" placeholder="dd-mm-yyyy" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Record Maximum Size</label>
+                <input type="number" formControlName="recordMaxSize" class="form-control form-control-lg" placeholder="Transcode Output URL" [ngClass]="{ 'is-invalid': submitted && f.channelName.errors }">
+                <div *ngIf="submitted && f?.recordMaxSize?.errors" class="form-text text-danger">
+                    <div *ngIf="f.recordMaxSize.errors?.required">Max Size is required!</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Interval</label>
+                <input type="text" formControlName="interval" class="form-control form-control-lg" placeholder="" [ngClass]="{ 'is-invalid': submitted && f.interval.errors }">
+                <div *ngIf="submitted && f.interval.errors" class="form-text text-danger">
+                    <div *ngIf="f.interval.errors?.required">Interval is required!</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="pr-4">Notify</label>
+                <ui-switch size='small' [checked]="notify"></ui-switch>
+                <div *ngIf="false">
+                    <input type="date" pattern="dd/mm/yyyy" class="form-control form-control-lg" formControlName="notify" placeholder="dd-mm-yyyy" />
+                </div>
+            </div>
+            <div class="form-group">
+                <button (click)="onflvRecording()" style="color: white;text-align:center" class=" mr-4 buton">Save</button>
+                <button (click)="onflvCancel()" style="color: white;text-align:center" class=" mr-4 buton">Cancel</button>
+            </div>
+        </form>
+    </section>
+</div>

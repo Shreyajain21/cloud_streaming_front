@@ -1,0 +1,34 @@
+<app-topbar [header]="send"></app-topbar>
+<section>
+    <div class="card">
+        <form>
+            <div class="form-group">
+                <label class="pr-4 mt-3 "><b>Multi-Bitrate Status</b> </label>
+                <ui-switch size='small' class="pt-5" [checked]="secure" formControlName="secure"></ui-switch>
+                <!-- <div *ngIf="channelDetails?.get('secure')?.value">
+                                <input type="date" pattern="dd/mm/yyyy" class="form-control form-control-lg" formControlName="playerCountDown" placeholder="dd-mm-yyyy" />
+                            </div> -->
+            </div>
+            <div class="form-group">
+                <label class="mt-2">Preset</label>
+                <div class="row">
+                    <div class="col-md-10">
+                        <select class="form-select form-control form-control-lg">
+                                    <option selected>144p_260p_360p_720p</option>
+                                    <option value="1">260p_360p_720p_1080p</option>
+                                    <option value="2">360p_720p_1280p</option>
+                                  </select>
+                    </div>
+                    <div class="col-md-2">
+                        <i class="fas fa-plus"></i>
+                        <i class="fas fa-edit"></i>
+                        <i class="fas fa-trash"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <button (click)="onBitrate()" style="color: white;text-align:center" class=" mr-4 buton">Save</button>
+            </div>
+        </form>
+    </div>
+</section>

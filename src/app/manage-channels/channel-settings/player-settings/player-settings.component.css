@@ -1,0 +1,124 @@
+.navbar-brand {
+    font-weight: 700;
+}
+
+#select {
+    color: orangered;
+}
+
+.drop {
+    width: 20vh;
+}
+
+.d-flex {
+    margin-top: -7px;
+}
+
+.left img {
+    width: 100%;
+    height: 30%;
+    border-radius: 5px;
+}
+
+.play {
+    position: relative;
+    margin-top: -58px;
+    border-radius: 5px;
+    width: 100%;
+    height: 6%;
+    color: white;
+    display: flex;
+    font-size: 25px;
+    padding: 15px 10px;
+    background-color: rgba(0, 0, 0, 0.726);
+}
+.back{
+    display: flex;
+}
+.line{
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 47%;
+    margin-top: 33%;
+    width: 1px;
+    height: 90%;
+    background-color: rgb(180, 180, 180);
+}
+.card {
+   /* border: none;*/
+    justify-content: space-around;
+}
+.play input {
+    margin-top: 13px;
+    margin-left: 10px;
+    color: red;
+    width: 90%;
+    height: 5px;
+}
+.icon {
+    position: absolute;
+    background-color: rgba(31, 31, 31, 0.5);
+    margin: 10px;
+    width: 35px;
+    align-items: center;
+    height: 35px;
+    color: white;
+    border-radius: 50px;
+}
+
+.icon .fa {
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.refrace {
+    font-size: 20px;
+    margin-top: 20%;
+}
+
+.left>hr {
+    margin-top: -3px;
+}
+
+.left>h6 p {
+    opacity: .5;
+}
+
+.left>.btn {
+    background-color: orangered;
+    margin-left: 80%;
+    color: white;
+}
+
+.text-input p {
+    font-size: 15px;
+    margin: 10px;
+}
+
+.text-input p input {
+    width: 90%;
+    padding: 10px;
+    height: 35px;
+    margin-top: 7px;
+}
+
+.end {
+    background-color: orangered;
+    border: none;
+    width: 25%;
+    height: 5%;
+    color: white;
+    border-radius: 5px;
+}
+
+.cheked{
+    position: absolute;
+    left: 38%;
+    align-items: center;
+}
+.Auto {
+    position: absolute;
+    width: 48%;
+    margin-top: -25px;
+    margin-left: 23%;
+}

@@ -1,0 +1,20 @@
+<form [formGroup]="mp4RecordingForm">
+    <div class="rec form-group">
+        <label class="pr-4">MP4 Recording</label>
+        <ui-switch size='small' [checked]="mp4Recording"></ui-switch>
+    </div>
+    <div class="rec form-group">
+        <label>File Name</label>
+        <input type="text" formControlName="fileName" class="form-control form-control-lg" placeholder="Enter A New File Name" [ngClass]="{ 'is-invalid': submitted && f.fileName.errors }">
+        <div *ngIf="submitted && f?.fileName?.errors" class="form-text text-danger">
+            <div *ngIf="f.fileName.errors?.required">File Name is required!</div>
+            <!-- <div *ngIf="f.fileName.errors?.minlength">File Name must be at least 6 character is required!</div>
+            <div *ngIf="f.fileName.errors?.maxlength">File Name must be max 20 character is required!</div> -->
+
+        </div>
+        <div class="form-group">
+            <h5>NOTE: <p>For every subsequent live streaming session,file names will be auto-generated using <br> <span>the given name as a prefix</span></p> </h5>
+        </div>
+        <div class="form-group">
+            <button (click)="onMp4Recording()" style="color: white;text-align:center" class=" mr-4 buton">Save</button>
+        </div>

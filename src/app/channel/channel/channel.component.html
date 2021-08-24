@@ -1,0 +1,46 @@
+<div class="back">
+   <!--- <nav class="navbar navbar-expand-lg navbar-light bg-white">
+        <a class="navbar-brand ml-5"  href="#">Channel</a> ---- -->
+        <nav class="navbar navbar-light">
+          <a class="navbar-brand">Channel</a> 
+      </nav>
+      <div class="center">
+          <i class="wifi fa fa-wifi"></i>
+          <h5 class="live">LIVE<i class="play fa fa-play-circle"></i></h5>
+          <div class="liter">STREAMING</div>
+          <button> <i class="fa fa-plus-circle"></i>Add Channel</button>
+      </div>  
+      <hr>
+      <p>Stream from your browser to:</p>
+      <div class="icons">
+          <a class="face" href="#">facebook</a>
+          <a class="you" href="#"><i class="fa fa-youtube" ></i></a>
+          <a class="twi" href="#"><img src="assets/twitch.png" alt=""></a>
+          <a class="TV" href="#"><i class="fa fa-play-circle"></i>Kakao <span>TV</span></a>
+      </div>
+<!------     <div class="message">
+        <i class="fa fa-commenting-o" (click)="openChat(chat)"></i>
+      </div> ---> 
+      
+      <div class="message">
+         <img [title]="icons" [src]="missagIocn" (click)="openChat(chat)" alt="">
+      </div>
+</div>
+
+
+<div class="popue">
+  <ng-template class="po" #chat let-c="close" let-d="dismiss">
+    <h5 class="popu"> 
+      <div class="header">
+        <i class="fa ri-message-2-line"></i>IdStream
+      </div>
+    <h3></h3>  
+    </h5>
+    <div class="ican">
+      <i class="fa ri-message-2-line"></i>
+      <p>How can we help with IdStream?</p>
+    </div>
+    <input type="text" placeholder="Compose your message.....">
+  </ng-template>
+</div>
+ 

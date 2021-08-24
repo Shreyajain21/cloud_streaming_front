@@ -1,0 +1,225 @@
+.back{
+    width: 163vh;
+    height: 98vh;
+}
+.navbar-brand{
+    font-weight: 600;
+}
+.center{
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 30%;
+    margin-left: 50%;
+    padding: 50px 180px;
+    width: 40%;
+    height: 30%; 
+}
+.center h5{
+    position: absolute;
+    font-size: 70px;
+    opacity: .3;
+}
+.play {
+    position: absolute;
+    font-size: 52px;
+    opacity: 1;
+    margin-left: 10px;
+    margin-top: -2px; 
+}
+.wifi{
+    position: absolute;
+    font-size: 31px;
+    font-weight: 100;
+    opacity: .6;
+    margin-left: 26px;
+    margin-top: -2px;
+}
+.liter{
+    position: absolute;
+    width: 36%;
+    padding: 2px 25px;
+    top: 50%;
+    height: 30px;
+    margin-left: 30px;
+    align-items: center;
+    color: white;
+    letter-spacing: 7px;
+    background-color: rgb(138, 138, 138);
+}
+button{
+    position: absolute;
+    border: none;
+    background-color: orangered;
+    color: white;
+    padding: 8px 30px;
+    font-size: 17px;
+    border-radius: 5px;
+    top: 75%;
+    font-weight: 600;
+    align-items: center;
+}
+button .fa{
+    padding: 0px 10px;
+}
+hr{
+    margin-top: 28%;
+}
+.back p{
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 52%;
+    font-size: 17px;
+    letter-spacing: 1px;
+    opacity: .3;
+    font-weight: 500;
+}
+.icons {
+    position: absolute;
+    top: 60%;
+    width: 65%;
+    height: 20%;
+    justify-content: space-between;
+    margin-left: 20%;
+    align-items: center;
+    text-decoration: none;
+}
+.icons a{
+    margin-left: 10%;
+    text-decoration: none;
+    color: black;  
+}
+ a.face {
+    font-size: 35px;
+    font-weight: 700;
+    opacity: .3;
+}
+.you{
+    font-size: 67px;
+    opacity: .3;
+}
+.twi img{
+    width: 110px; 
+    opacity: .3;
+}
+.TV {
+    font-size: 25px;
+    font-weight: 500;
+    opacity: .3;
+}
+.TV .fa{
+    font-size: 38px;
+    padding: 5px 6px;
+
+}
+.TV span{
+    font-weight: 700;
+}
+.popue{
+    position: absolute;
+    margin-top: 70%;
+}
+.header{
+    width: 100%;
+    height: 20%;
+    border-radius: 5px;
+    background-color: rgb(0, 0, 78);
+    color: white;
+    font-size: 30px;
+}
+.header .fa{
+    margin: 30px;
+    font-size: 20px;
+    border-radius: 50px;
+    color: white;
+    padding: 12px 12px;
+    border: 3px solid white;
+}
+.message .fa{
+    position: absolute;
+    font-size: 40px;
+    left: 97%;
+    top: 87%;
+    border-radius: 50px;
+    color: white;
+    background-color: orangered;
+    padding: 21px 21px;
+}
+.popu input{
+    position: relative;
+    margin-top: 190vh;
+    height: 30%;
+    width: 100%;  
+}
+.ican{
+    display: flex;
+    width: 100%;
+    height: 300%;
+}
+.ican .fa{
+    margin: 10px;
+    padding: 14px 18px;
+    font-size: 18px;
+    color: white;
+    background-color: rgb(0, 0, 105);
+    border-radius: 50px;
+}
+.ican p{
+    margin-bottom: 50px;
+}
+.message img{
+    margin-left: 90%;
+    margin-top: 18%;
+    width: 77px;
+}
+@media only screen and (max-width: 750px){
+    .center{
+        left: -90px;    
+    }
+    .liter{
+        margin-top: 8%;
+        width: 51%;
+        background-color: rgb(81, 102, 102);
+    }
+    button{
+        margin-top: 12%;
+        right: 10px;
+    }
+    hr{
+        margin-top: 27%;
+    }
+    .back p{
+        
+        margin-left: -40px;
+        font-size: 14px;
+    }
+    .icons {
+        margin-left: -8%;
+        margin-top: 5%;
+        width: 100%;
+    }
+    a.face {
+        font-size: 20px;
+        right: 30px;
+    }
+    .you{
+        font-size: 20px;
+        opacity: .3;
+    }
+    .twi img{
+        width: 40px; 
+        opacity: .3;
+    }
+    .TV {
+        font-size: 16px;
+        font-weight: 500;
+        opacity: .3;
+    }
+    .TV .fa{
+        font-size: 25px;
+        padding: 0px 6px;
+    }
+    .message .fa{
+        font-size: 30px;
+        left: 80%;
+    }
+}
