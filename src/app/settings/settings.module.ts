@@ -9,6 +9,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { SharedModule } from '../shared/shared.module';
 import { SocialAlertsComponent } from './social-alerts/social-alerts.component';
+import { EmailnotifactionComponent } from './emailnotifaction/emailnotifaction.component';
+import { Emailnot2Component } from './emailnot2/emailnot2.component';
+import { UserComponent } from './user/user.component';
 
 
 @NgModule({
@@ -16,7 +19,10 @@ import { SocialAlertsComponent } from './social-alerts/social-alerts.component';
     AccountComponent,
     PasswordComponent,
     PaymentsComponent,
-    SocialAlertsComponent
+    SocialAlertsComponent,
+    EmailnotifactionComponent,
+    Emailnot2Component,
+    UserComponent
   ],
   imports: [
     CommonModule,

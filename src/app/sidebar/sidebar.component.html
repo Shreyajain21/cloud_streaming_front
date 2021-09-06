@@ -83,8 +83,24 @@
             </div>
             <div class="items"><a routerLink="/chat-app/chatApp" ><i class="fas fa-comment-alt"></i>Chat App</a></div>
             <div class="items"><a routerLink="/help-center/helpCenter"><i class="fas ri-question-line"></i>Help Center</a></div>
-            <div class="items"><a routerLink="/billing/billing" ><i class="fas ri-bill-line"></i>Billing </a></div>
+          <!---  <div class="items"><a routerLink="/billing/billing" ><i class="fas ri-bill-line"></i>Billing </a></div>---->
 
+            <div class="items">
+                <a (click)="collapsee=!collapsee"><i class=" fas fa-cog "></i>Billing<span class="float-right"><i class="down in fas fa-angle-right"></i></span> </a>
+            </div>
+            <div class="inter sub-menu">
+                <div *ngIf="collapsee"><a class="dropdown-item" routerLink="/billing/dashboard">Dashboard</a></div> 
+            </div>
+            <div class="inter sub-menu">
+                <div *ngIf="collapsee"><a class="dropdown-item" routerLink="/billing/billingsettings">Billing-Stttings</a></div> 
+            </div>
+            <div class="inter sub-menu">
+                <div *ngIf="collapsee"><a class="dropdown-item" routerLink="/billing/serverdashboard">Server Dashboard</a></div> 
+            </div>
+            <div class="inter sub-menu">
+                <div *ngIf="collapsee"><a class="dropdown-item" routerLink="/billing/addmindashboard">Addmin-Dashboard</a></div> 
+            </div>
+            
             <div class="items">
                 <a (click)="collapse=!collapse"><i class="fas fa-cog"></i>Settings<span class="float-right"><i class="down in fas fa-angle-right"></i></span> </a>
             </div>
@@ -93,11 +109,13 @@
                 <div *ngIf="collapse"><a class="dropdown-item" routerLink="/settings/password">Password</a></div>
                 <div *ngIf="collapse"><a class="dropdown-item" routerLink="/settings/payments">Payment</a></div>
                 <div *ngIf="collapse"><a class="dropdown-item" routerLink="/settings/social-alerts">Social Alerts</a></div>
+                <div *ngIf="collapse"><a class="dropdown-item" routerLink="/settings/emailnotifaction">Email-Notifactions</a></div>
+                <div *ngIf="collapse"><a class="dropdown-item" routerLink="/settings/emailnot2">Email</a></div>
+                <div *ngIf="collapse"><a class="dropdown-item" routerLink="/settings/user">User</a></div>
             </div>
             <div class="items">
-                <a  routerLink="logout"><i class="log fas fa-sign-out-alt"></i>Logout</a>
-            </div>
-            
+                <a routerLink="logout"><i class="log fas fa-sign-out-alt"></i>Logout</a>
+            </div>      
         </div>
     </div>
 </div>

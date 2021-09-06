@@ -1,3 +1,4 @@
+
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -6,6 +7,8 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
 import { SharedModule } from '../shared/shared.module';
 import { DashchannelListComponent } from './dashchannel-list/dashchannel-list.component';
 import { InvoicesDueComponent } from './invoices-due/invoices-due.component';
+import { ServerdasComponent } from './serverdas/serverdas.component';
+
 // import { FormsModule } from '@angular/forms';
 // import { IgxCalendarModule, IgxSnackbarModule } from 'igniteui-angular';
 // import { CalendarModule } from '@syncfusion/ej2-angular-calendars';
@@ -16,7 +19,8 @@ import { InvoicesDueComponent } from './invoices-due/invoices-due.component';
     // DashboardComponent
   
     DashchannelListComponent,
-    InvoicesDueComponent
+    InvoicesDueComponent,
+    ServerdasComponent
   ],
   imports: [
     CommonModule,

@@ -11,6 +11,7 @@ import { $ } from 'protractor';
 export class SidebarComponent implements OnInit {
 expand:any;
 collapse:any;
+collapsee:any;
 expandPushDest:any= true;
 expands:any;
 

@@ -4,7 +4,9 @@ import { AccountComponent } from './account/account.component';
 import { PasswordComponent } from './password/password.component';
 import { PaymentsComponent } from './payments/payments.component';
 import { SocialAlertsComponent } from './social-alerts/social-alerts.component';
-
+import { EmailnotifactionComponent } from './emailnotifaction/emailnotifaction.component';
+import { Emailnot2Component } from './emailnot2/emailnot2.component';
+import { UserComponent } from './user/user.component';
 const routes: Routes = [
   {
     path:'account', component:AccountComponent
@@ -17,7 +19,16 @@ const routes: Routes = [
   },
   {
     path:'social-alerts', component:SocialAlertsComponent
-  } 
+  } ,
+  {
+    path: 'emailnotifaction', component: EmailnotifactionComponent
+  },
+  {
+    path: 'emailnot2', component: Emailnot2Component
+  },
+  {
+    path: 'user', component: UserComponent
+  }
 ];
 @NgModule({
   imports: [RouterModule.forChild(routes)],
